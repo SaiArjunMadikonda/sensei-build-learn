@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,8 +8,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-3">
-            <span className="text-xl font-extrabold tracking-tight text-primary">SenseI</span>
-            <p className="text-sm text-muted-foreground">Build it. Try it. Learn it!</p>
+            <img src={logo} alt="SenseI" className="h-12 w-auto" />
             <p className="text-xs text-muted-foreground">
               Hands-on STEM kits that bring real-world learning home.
             </p>
