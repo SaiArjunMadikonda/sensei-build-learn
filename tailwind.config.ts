@@ -18,6 +18,7 @@ export default {
       },
       colors: {
         border: "hsl(var(--border))",
+        "border-neutral": "hsl(var(--border-neutral))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -25,6 +26,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
+          deep: "hsl(var(--primary-deep))",
           glow: "hsl(var(--primary-glow))",
         },
         secondary: {
@@ -70,6 +73,14 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "2xl": "1rem",
+        "3xl": "1.25rem",
+      },
+      boxShadow: {
+        "warm": "0 1px 3px 0 hsl(258 90% 76% / 0.08), 0 1px 2px -1px hsl(258 90% 76% / 0.06)",
+        "warm-md": "0 4px 12px -1px hsl(258 90% 76% / 0.10), 0 2px 4px -2px hsl(258 90% 76% / 0.06)",
+        "warm-lg": "0 10px 25px -3px hsl(258 90% 76% / 0.12), 0 4px 6px -4px hsl(258 90% 76% / 0.06)",
+        "warm-xl": "0 20px 40px -5px hsl(258 90% 76% / 0.15), 0 8px 10px -6px hsl(258 90% 76% / 0.08)",
       },
       keyframes: {
         "accordion-down": {

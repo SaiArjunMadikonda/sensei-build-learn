@@ -8,12 +8,18 @@ import WaitlistForm from "@/components/forms/WaitlistForm";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowLeft, Clock, BarChart3, Shield } from "lucide-react";
+import { ArrowLeft, Clock, BarChart3, Shield, Users, TrendingUp, Package } from "lucide-react";
+
+const ProductChip = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-accent px-3 py-1 text-xs font-medium text-secondary-foreground">
+    {children}
+  </span>
+);
 
 const KitsPage = () => {
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-secondary/50 to-background py-16">
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight">STEM Kits</h1>
@@ -28,22 +34,18 @@ const KitsPage = () => {
         <div className="container">
           <div className="grid gap-8 md:grid-cols-3">
             {kits.map((kit) => (
-              <Card key={kit.id} className="group overflow-hidden transition-all hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-secondary to-accent">
+              <Card key={kit.id} className="group overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1">
+                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-accent to-secondary">
                   <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
                 </div>
                 <CardContent className="p-6">
                   <div className="mb-3 flex flex-wrap gap-1.5">
-                    {kit.skillTags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
-                    ))}
+                    <ProductChip><Clock className="h-3 w-3" /> {kit.timePerActivity}</ProductChip>
+                    <ProductChip>Age {kit.ageRange}</ProductChip>
+                    <ProductChip>{kit.difficulty}</ProductChip>
                   </div>
                   <h2 className="text-xl font-bold">{kit.name}</h2>
                   <p className="mt-1.5 text-sm text-muted-foreground">{kit.tagline}</p>
-                  <div className="mt-3 flex items-center gap-4 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {kit.timePerActivity}</span>
-                    <span className="flex items-center gap-1"><BarChart3 className="h-3 w-3" /> {kit.difficulty}</span>
-                  </div>
                   <ul className="mt-4 space-y-1.5">
                     {kit.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -92,34 +94,23 @@ const KitDetailPage = () => {
 
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-secondary/50 to-background py-12">
+      <section className="py-12" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <Button asChild variant="ghost" size="sm" className="mb-4">
             <Link to="/kits"><ArrowLeft className="mr-1.5 h-4 w-4" /> All Kits</Link>
           </Button>
           <div className="grid gap-10 lg:grid-cols-2">
-            <div className="flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary to-accent lg:h-96">
+            <div className="flex h-64 items-center justify-center rounded-3xl bg-gradient-to-br from-accent to-secondary shadow-warm lg:h-96">
               <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
             </div>
             <div>
               <div className="flex flex-wrap gap-1.5 mb-3">
-                {kit.skillTags.map((tag) => (
-                  <Badge key={tag} variant="secondary">{tag}</Badge>
-                ))}
+                <ProductChip><Clock className="h-3 w-3" /> {kit.timePerActivity}</ProductChip>
+                <ProductChip><Users className="h-3 w-3" /> Age {kit.ageRange}</ProductChip>
+                <ProductChip><TrendingUp className="h-3 w-3" /> {kit.difficulty}</ProductChip>
               </div>
               <h1 className="text-3xl font-extrabold tracking-tight">{kit.name}</h1>
               <p className="mt-2 text-muted-foreground">{kit.tagline}</p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                <div className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium">
-                  <Clock className="h-3.5 w-3.5" /> {kit.timePerActivity}
-                </div>
-                <div className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium">
-                  <BarChart3 className="h-3.5 w-3.5" /> {kit.difficulty}
-                </div>
-                <div className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium">
-                  Ages {kit.ageRange}
-                </div>
-              </div>
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{kit.overview}</p>
               <div className="mt-6">
                 <WaitlistForm sourcePage={`kit-${kit.id}`} kitInterest={kit.id} compact showRole={false} />
@@ -134,7 +125,7 @@ const KitDetailPage = () => {
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-bold">What's Inside</h2>
+              <h2 className="flex items-center gap-2 text-2xl font-bold"><Package className="h-5 w-5 text-primary" /> What's Inside</h2>
               <ul className="mt-4 space-y-2">
                 {kit.whatsInside.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -158,9 +149,9 @@ const KitDetailPage = () => {
       </section>
 
       {/* Safety */}
-      <section className="bg-muted/30 py-12">
+      <section className="bg-accent py-12">
         <div className="container">
-          <div className="flex items-start gap-3 rounded-xl border border-border bg-card p-6 shadow-sm">
+          <div className="flex items-start gap-3 rounded-3xl border border-border bg-card p-6 shadow-warm">
             <Shield className="h-5 w-5 shrink-0 text-primary" />
             <div>
               <h3 className="font-semibold">Safety & Materials</h3>
@@ -174,10 +165,10 @@ const KitDetailPage = () => {
       <section className="py-16">
         <div className="container">
           <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="mt-6 max-w-2xl">
+          <Accordion type="single" collapsible className="mt-6 max-w-2xl space-y-2">
             {kit.faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left text-sm">{faq.question}</AccordionTrigger>
+              <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border px-5">
+                <AccordionTrigger className="text-left text-sm font-semibold">{faq.question}</AccordionTrigger>
                 <AccordionContent className="text-sm text-muted-foreground">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}

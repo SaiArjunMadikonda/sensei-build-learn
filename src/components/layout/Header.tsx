@@ -33,9 +33,9 @@ const Header = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+              className={`relative rounded-xl px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
                 isActive(link.to)
-                  ? "text-primary font-semibold"
+                  ? "text-primary-deep font-semibold"
                   : "text-muted-foreground"
               }`}
             >
@@ -48,14 +48,14 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Button asChild className="shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-shadow">
+          <Button asChild className="shadow-warm-md hover:shadow-warm-lg">
             <Link to="/waitlist">Join Waitlist</Link>
           </Button>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden rounded-lg p-2 text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+          className="lg:hidden rounded-xl p-2 text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -72,14 +72,14 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={`rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                  isActive(link.to) ? "text-primary bg-accent font-semibold" : "text-muted-foreground hover:bg-accent"
+                className={`rounded-xl px-3 py-2.5 text-sm font-medium transition-colors ${
+                  isActive(link.to) ? "text-primary-deep bg-accent font-semibold" : "text-muted-foreground hover:bg-accent"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="mt-3 shadow-md shadow-primary/20">
+            <Button asChild className="mt-3 shadow-warm-md">
               <Link to="/waitlist" onClick={() => setMobileOpen(false)}>Join Waitlist</Link>
             </Button>
           </nav>

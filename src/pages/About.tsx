@@ -11,7 +11,7 @@ const values = [
 const About = () => {
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-secondary/50 to-background py-16">
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight">About SenseI</h1>
@@ -22,9 +22,9 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20">
         <div className="container">
-          <div className="mx-auto max-w-3xl space-y-8">
+          <div className="mx-auto max-w-3xl space-y-10">
             <div>
               <h2 className="text-2xl font-bold">Our Story</h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
@@ -41,7 +41,7 @@ const About = () => {
 
             <div>
               <h2 className="text-2xl font-bold">Our Mission</h2>
-              <div className="mt-4 rounded-2xl border border-primary/20 bg-secondary/30 p-6 text-center">
+              <div className="mt-4 rounded-3xl border border-border bg-accent p-6 text-center shadow-warm">
                 <p className="text-lg font-semibold text-foreground">
                   "Bring hands-on learning back into modern childhood."
                 </p>
@@ -52,8 +52,8 @@ const About = () => {
               <h2 className="text-2xl font-bold">Our Values</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {values.map((v) => (
-                  <div key={v.title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <div key={v.title} className="rounded-3xl border border-border bg-card p-5 shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-0.5">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-accent text-primary">
                       <v.icon className="h-4 w-4" />
                     </div>
                     <h3 className="mt-3 font-bold">{v.title}</h3>
@@ -67,8 +67,8 @@ const About = () => {
               <h2 className="text-2xl font-bold">The Team</h2>
               <div className="mt-6 grid gap-6 sm:grid-cols-3">
                 {["Founder 1", "Founder 2", "Advisor"].map((name) => (
-                  <div key={name} className="rounded-xl border border-border bg-card p-5 text-center shadow-sm">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-muted">
+                  <div key={name} className="rounded-3xl border border-border bg-card p-5 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-0.5">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent">
                       <span className="text-xs text-muted-foreground">Photo</span>
                     </div>
                     <h3 className="mt-3 font-semibold">{name}</h3>

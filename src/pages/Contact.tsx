@@ -42,7 +42,7 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-secondary/50 to-background py-16">
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight">Contact Us</h1>
@@ -53,11 +53,13 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20">
         <div className="container">
           <div className="mx-auto max-w-lg">
-            <div className="mb-8 flex items-center gap-3 rounded-xl border border-border bg-muted/30 p-4">
-              <Mail className="h-5 w-5 text-primary" />
+            <div className="mb-8 flex items-center gap-3 rounded-2xl border border-border bg-accent p-4 shadow-warm">
+              <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <Mail className="h-4 w-4" />
+              </div>
               <div>
                 <p className="text-sm font-semibold">Email us directly</p>
                 <p className="text-sm text-muted-foreground">hello@sensei-stem.com</p>
@@ -65,24 +67,24 @@ const Contact = () => {
             </div>
 
             {submitted ? (
-              <div className="rounded-xl border border-primary/20 bg-secondary/50 p-6 text-center">
+              <div className="rounded-3xl border border-border bg-accent p-6 text-center shadow-warm">
                 <div className="mb-2 text-2xl">✉️</div>
                 <h3 className="text-lg font-semibold">Message sent!</h3>
                 <p className="mt-1 text-sm text-muted-foreground">We'll get back to you as soon as possible.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-border bg-card p-8 shadow-warm">
                 <div>
                   <Label>Name *</Label>
-                  <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={100} />
+                  <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={100} className="mt-1" />
                 </div>
                 <div>
                   <Label>Email *</Label>
-                  <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required maxLength={255} />
+                  <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required maxLength={255} className="mt-1" />
                 </div>
                 <div>
                   <Label>Message *</Label>
-                  <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={1000} rows={5} />
+                  <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={1000} rows={5} className="mt-1" />
                 </div>
                 <Button type="submit" disabled={loading} className="w-full">
                   {loading ? "Sending…" : "Send Message"}
@@ -93,7 +95,7 @@ const Contact = () => {
 
             <div className="mt-8 flex justify-center gap-3">
               {["Instagram", "Twitter", "Facebook"].map((name) => (
-                <a key={name} href="#" className="rounded-full bg-muted px-4 py-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
+                <a key={name} href="#" className="rounded-full bg-accent border border-border px-4 py-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
                   {name}
                 </a>
               ))}
