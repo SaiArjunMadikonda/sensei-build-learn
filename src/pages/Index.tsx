@@ -11,28 +11,28 @@ import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles, Clock
 import heroKits from "@/assets/hero-kits.jpg";
 
 const valueProps = [
-  { icon: Puzzle, title: "Hands-On Learning", desc: "Real materials that make abstract STEM concepts click." },
-  { icon: BookOpen, title: "Guided Challenges", desc: "Mission cards with clear goals — no long manuals or parent prep." },
-  { icon: Lightbulb, title: "Independent Play", desc: "Kids can start quickly and keep going on their own." },
-  { icon: Repeat, title: "Repeatable Progression", desc: "Short missions that build skill-by-skill, from easy wins to bigger builds." },
-  { icon: Users, title: "Parent & Teacher Friendly", desc: "Minimal setup, quick reset, built for busy homes and classrooms." },
+  { icon: Puzzle, title: "Hands-on by design", desc: "Real materials that turn concepts into experiences." },
+  { icon: BookOpen, title: "Guided by the Companion", desc: "Less manual-reading. More momentum." },
+  { icon: Lightbulb, title: "Independent learning", desc: "Kids can keep going without constant adult help." },
+  { icon: Repeat, title: "Progressive challenges", desc: "Missions that level up as skills grow." },
+  { icon: Users, title: "Built for home + classrooms", desc: "Easy setup, quick reset, repeatable play." },
 ];
 
 const kitBullets: Record<string, string[]> = {
   "balance-forces-lab": [
-    "Build balance systems and test how weight, distance, and leverage change outcomes",
-    "Learn equilibrium, torque, and center of mass through hands-on missions",
-    "15–30 minute challenges with level-up difficulty",
+    "Build balance systems and test how weight + distance change outcomes",
+    "Learn center of mass and real-world forces through missions",
+    "Level up from quick wins to advanced builds",
   ],
   "cause-effect-lab": [
-    "Create simple systems where one action triggers the next",
-    "Explore variables like force, friction, and timing by experimenting",
-    "Missions → free-play mode: kids invent their own experiments",
+    "Build chain-reaction systems where one action triggers the next",
+    "Experiment with friction, timing, and force",
+    "Missions that spark curiosity + free-play creation",
   ],
   "logic-builders-kit": [
-    "Solve puzzles using rules, patterns, and constraints",
-    "Practice sequencing, debugging, and reasoning skills",
-    "Fast, satisfying missions that build focus and persistence",
+    "Solve puzzles using patterns, rules, and constraints",
+    "Practice sequencing and \u2018debugging\u2019 thinking",
+    "Fast missions that build focus and persistence",
   ],
 };
 
@@ -64,21 +64,21 @@ const Index = () => {
             {/* Text */}
             <div className="text-center lg:text-left">
               <Badge variant="secondary" className="mb-6 gap-1.5 border border-border px-4 py-1.5 text-sm font-medium">
-                <Sparkles className="h-3.5 w-3.5" /> Pilot launching soon — early access opens first
+                <Sparkles className="h-3.5 w-3.5" /> Learning Companion — Pilot access opening soon
               </Badge>
               <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                Hands-on STEM that kids{" "}
-                <span className="text-primary">actually finish.</span>
+                Kits that come alive with a{" "}
+                <span className="text-primary">learning companion.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
-                Concept-based kits for ages 6–8 that turn big ideas into builds, experiments, and 'aha' moments — at home or in the classroom.
+                Hands-on STEM kits for ages 6–8 where kids build with real materials — while the SenseI Companion guides missions, offers gentle hints, and celebrates progress.
               </p>
 
               {/* Product chips */}
               <div className="mt-5 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
                 <ProductChip><Users className="h-3 w-3" /> Age 6–8</ProductChip>
                 <ProductChip><Clock className="h-3 w-3" /> 15–30 min</ProductChip>
-                <ProductChip><TrendingUp className="h-3 w-3" /> Beginner → Level up</ProductChip>
+                <ProductChip><TrendingUp className="h-3 w-3" /> Level-up missions</ProductChip>
               </div>
 
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
@@ -90,7 +90,7 @@ const Index = () => {
                 </Button>
               </div>
               <p className="mt-4 text-xs text-muted-foreground">
-                Join for pilot invites + launch updates. No spam.
+                Get early pilot invites for kits + the learning companion. No spam.
               </p>
             </div>
 
@@ -129,7 +129,7 @@ const Index = () => {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our First Three Kits</h2>
             <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
-              Each kit includes mission cards, real materials, and progressive challenges that build confidence and real problem-solving.
+              Each kit includes mission cards, real materials, and a companion-guided experience that turns learning into an adventure.
             </p>
           </div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -155,7 +155,7 @@ const Index = () => {
                   </ul>
                   <div className="mt-5">
                     <Button asChild size="sm" className="w-full">
-                      <Link to="/waitlist">Join Waitlist for This Kit</Link>
+                      <Link to="/waitlist">Get Early Access</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -165,8 +165,35 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Hands-on Gap */}
+      {/* Meet the Learning Companion */}
       <section className="bg-accent py-24">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Meet the Learning Companion</h2>
+            <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
+              A friendly guide that keeps kids moving from &lsquo;stuck&rsquo; to &lsquo;I got it.&rsquo;
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {[
+              { title: "Guides the Mission", desc: "Step-by-step prompts that help kids start fast and stay on track." },
+              { title: "Hints, Not Answers", desc: "Gentle nudges when they\u2019re stuck \u2014 so they learn by thinking, not copying." },
+              { title: "Celebrates Progress", desc: "Milestones, encouragement, and \u2018level up\u2019 moments that build confidence." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1">
+                <h3 className="text-lg font-bold text-primary-deep">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-center text-sm text-muted-foreground">
+            Pilot rollout begins with early access families and educators.
+          </p>
+        </div>
+      </section>
+
+      {/* The Hands-on Gap */}
+      <section className="py-24">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">The Hands-on Gap</h2>
@@ -193,7 +220,7 @@ const Index = () => {
       </section>
 
       {/* Why SenseI */}
-      <section className="py-24">
+      <section className="bg-accent py-24">
         <div className="container">
           <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Why SenseI?</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">

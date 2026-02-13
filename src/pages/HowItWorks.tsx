@@ -2,11 +2,11 @@ import Layout from "@/components/layout/Layout";
 import { Badge } from "@/components/ui/badge";
 
 const steps = [
-  { num: "01", title: "Choose Your Kit", desc: "Pick a kit built for your child\u2019s age and interests (ages 6\u20138 for our first launch). Each kit focuses on one core concept so learning stays clear and satisfying." },
-  { num: "02", title: "Start a Mission Card", desc: "Open a mission card with a simple goal (\u201CMake it balance.\u201D \u201CTrigger the chain.\u201D \u201CSolve the pattern.\u201D). Kids know exactly what \u201Cdone\u201D looks like." },
-  { num: "03", title: "Build & Test", desc: "Use real materials to build, experiment, and test. Kids learn by trying, adjusting, and seeing what changes \u2014 not by memorizing." },
-  { num: "04", title: "Unlock the \u201CWhy\u201D", desc: "Each mission includes a short explanation so kids understand why it worked (or didn\u2019t). That\u2019s how the concept sticks." },
-  { num: "05", title: "Level Up", desc: "Move to the next mission for a slightly harder challenge. Skills build progressively \u2014 confidence compounds." },
+  { num: "01", title: "Choose a kit", desc: "Pick a kit built for your child\u2019s age and interests (ages 6\u20138 for our first launch). Each kit focuses on one core concept so learning stays clear and satisfying." },
+  { num: "02", title: "Start a mission card", desc: "Open a mission card with a simple goal (\u201CMake it balance.\u201D \u201CTrigger the chain.\u201D \u201CSolve the pattern.\u201D). Kids know exactly what \u201Cdone\u201D looks like." },
+  { num: "03", title: "Build & test", desc: "Use real materials to build, experiment, and test. Kids learn by trying, adjusting, and seeing what changes \u2014 not by memorizing." },
+  { num: "04", title: "The Companion guides and gives hints", desc: "As kids work through each mission, the SenseI Companion offers gentle prompts, nudges when they\u2019re stuck, and celebrates when they break through." },
+  { num: "05", title: "Level up to the next challenge", desc: "Move to the next mission for a slightly harder challenge. Skills build progressively \u2014 confidence compounds." },
 ];
 
 const HowItWorks = () => {
@@ -45,10 +45,10 @@ const HowItWorks = () => {
       <section className="bg-accent py-16">
         <div className="container">
           <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 text-center shadow-warm">
-            <Badge variant="secondary" className="mb-3">Coming Soon</Badge>
-            <h2 className="text-2xl font-bold">Optional Companion Experience</h2>
+            <Badge variant="secondary" className="mb-3">Pilot Access Opening Soon</Badge>
+            <h2 className="text-2xl font-bold">The SenseI Learning Companion</h2>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              We're exploring an optional companion layer that supports hands-on learning — things like gentle hints, progress tracking, and bonus challenges. The core experience will always be tactile-first and fully usable without screens; the companion is designed to enhance, not replace, physical play.
+              Every kit comes alive with the SenseI Companion \u2014 a friendly guide that walks kids through missions, offers gentle hints when they\u2019re stuck, and celebrates progress along the way. Tactile play always comes first; the Companion is designed to enhance, not replace, hands-on learning.
             </p>
           </div>
         </div>
