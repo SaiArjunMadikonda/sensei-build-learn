@@ -7,13 +7,13 @@
 @layer base {
   :root {
     --background: 320 100% 99.6%;
-    --foreground: 220 39% 11%;
+    --foreground: 220 13% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 39% 11%;
+    --card-foreground: 220 13% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 39% 11%;
+    --popover-foreground: 220 13% 18%;
 
     --primary: 258 90% 76%;
     --primary-foreground: 0 0% 100%;
@@ -24,7 +24,7 @@
     --secondary-foreground: 263 55% 42%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 218 11% 35%;
+    --muted-foreground: 220 9% 46%;
 
     --accent: 250 100% 98%;
     --accent-foreground: 263 55% 42%;
@@ -51,7 +51,7 @@
     /* Custom tokens */
     --primary-glow: 258 95% 82%;
     --surface: 250 100% 99%;
-    --surface-foreground: 220 39% 11%;
+    --surface-foreground: 220 13% 18%;
     --violet-light: 250 100% 98%;
     --section-highlight: 250 100% 98%;
     --section-warm: 320 100% 99.6%;
