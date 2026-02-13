@@ -7,7 +7,8 @@ import WaitlistForm from "@/components/forms/WaitlistForm";
 import Layout from "@/components/layout/Layout";
 import WaitlistModal from "@/components/WaitlistModal";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles, Clock, TrendingUp } from "lucide-react";
+import heroKits from "@/assets/hero-kits.jpg";
 
 const valueProps = [
   { icon: Puzzle, title: "Hands-On Learning", desc: "Real materials that make abstract STEM concepts click." },
@@ -35,6 +36,12 @@ const kitBullets: Record<string, string[]> = {
   ],
 };
 
+const ProductChip = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-accent px-3 py-1 text-xs font-medium text-secondary-foreground">
+    {children}
+  </span>
+);
+
 const Index = () => {
   return (
     <Layout>
@@ -47,36 +54,58 @@ const Index = () => {
       <WaitlistModal />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-accent via-background to-background">
-        <div className="container py-24 md:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="secondary" className="mb-6 gap-1.5 px-4 py-1.5 text-sm font-medium border border-border">
-              <Sparkles className="h-3.5 w-3.5" /> Pilot launching soon — early access opens first
-            </Badge>
-            <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Hands-on STEM that kids{" "}
-              <span className="text-primary">actually finish.</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Concept-based kits for ages 6–8 that turn big ideas into builds, experiments, and 'aha' moments — at home or in the classroom.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button asChild size="lg" className="px-8 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
-                <Link to="/waitlist">Join Waitlist</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="px-8">
-                <Link to="/kits">Explore Kits <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
-              </Button>
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 55%, hsl(0 0% 100%) 100%)' }}>
+        {/* Decorative blob */}
+        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.15]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)' }} />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)' }} />
+
+        <div className="container py-20 md:py-28">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Text */}
+            <div className="text-center lg:text-left">
+              <Badge variant="secondary" className="mb-6 gap-1.5 border border-border px-4 py-1.5 text-sm font-medium">
+                <Sparkles className="h-3.5 w-3.5" /> Pilot launching soon — early access opens first
+              </Badge>
+              <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                Hands-on STEM that kids{" "}
+                <span className="text-primary">actually finish.</span>
+              </h1>
+              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
+                Concept-based kits for ages 6–8 that turn big ideas into builds, experiments, and 'aha' moments — at home or in the classroom.
+              </p>
+
+              {/* Product chips */}
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                <ProductChip><Users className="h-3 w-3" /> Age 6–8</ProductChip>
+                <ProductChip><Clock className="h-3 w-3" /> 15–30 min</ProductChip>
+                <ProductChip><TrendingUp className="h-3 w-3" /> Beginner → Level up</ProductChip>
+              </div>
+
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+                <Button asChild size="lg" className="px-8 shadow-warm-md hover:shadow-warm-lg">
+                  <Link to="/waitlist">Join Waitlist <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="px-8">
+                  <Link to="/kits">Explore Kits</Link>
+                </Button>
+              </div>
+              <p className="mt-4 text-xs text-muted-foreground">
+                Join for pilot invites + launch updates. No spam.
+              </p>
             </div>
-            <p className="mt-4 text-xs text-muted-foreground">
-              Join for pilot invites + launch updates. No spam.
-            </p>
+
+            {/* Hero image */}
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
+              <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
+                <img src={heroKits} alt="SenseI STEM kits with mission cards, building blocks, and concept guide" className="h-auto w-full object-cover" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Social Proof */}
-      <section className="border-y border-border/40 bg-accent/50 py-8">
+      <section className="border-y border-border/40 bg-muted/30 py-8">
         <div className="container">
           <p className="mb-2 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
             Built with forward-thinking parents & educators
@@ -99,21 +128,21 @@ const Index = () => {
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our First Three Kits</h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
               Each kit includes mission cards, real materials, and progressive challenges that build confidence and real problem-solving.
             </p>
           </div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {kits.map((kit) => (
-              <Card key={kit.id} className="group overflow-hidden rounded-2xl border-border/50 shadow-sm transition-all hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
+              <Card key={kit.id} className="group overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1">
                 <div className="flex h-52 items-center justify-center bg-gradient-to-br from-accent to-secondary">
                   <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
                 </div>
                 <CardContent className="p-6">
                   <div className="mb-3 flex flex-wrap gap-1.5">
-                    {kit.skillTags.slice(0, 3).map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs font-medium">{tag}</Badge>
-                    ))}
+                    <ProductChip><Clock className="h-3 w-3" /> {kit.timePerActivity}</ProductChip>
+                    <ProductChip>Age {kit.ageRange}</ProductChip>
+                    <ProductChip>{kit.difficulty}</ProductChip>
                   </div>
                   <h3 className="text-lg font-bold">{kit.name}</h3>
                   <ul className="mt-3 space-y-2">
@@ -125,7 +154,7 @@ const Index = () => {
                     ))}
                   </ul>
                   <div className="mt-5">
-                    <Button asChild size="sm" className="w-full shadow-sm shadow-primary/15">
+                    <Button asChild size="sm" className="w-full">
                       <Link to="/waitlist">Join Waitlist for This Kit</Link>
                     </Button>
                   </div>
@@ -137,11 +166,11 @@ const Index = () => {
       </section>
 
       {/* The Hands-on Gap */}
-      <section className="bg-accent/50 py-24">
+      <section className="bg-accent py-24">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">The Hands-on Gap</h2>
-            <p className="mt-4 text-center text-muted-foreground">
+            <p className="mt-4 mx-auto max-w-2xl text-center text-muted-foreground">
               Kids have more access to information than ever — but fewer chances to build, test, and learn through real materials. SenseI brings hands-on learning back in a way that fits modern routines.
             </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -150,8 +179,8 @@ const Index = () => {
                 { title: "Hands-on practice drives understanding", text: "Physical exploration helps concepts stick through real feedback." },
                 { title: "Parents & schools need low-prep STEM", text: "Great activities exist — but they must be easy to start and repeat." },
               ].map((item) => (
-                <div key={item.title} className="rounded-2xl border border-border bg-card p-7 text-center shadow-sm">
-                  <div className="text-lg font-bold text-primary">{item.title}</div>
+                <div key={item.title} className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1">
+                  <div className="text-lg font-bold text-primary-deep">{item.title}</div>
                   <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
                 </div>
               ))}
@@ -172,8 +201,8 @@ const Index = () => {
           </p>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {valueProps.map((vp) => (
-              <div key={vp.title} className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-primary">
+              <div key={vp.title} className="rounded-3xl border border-border bg-card p-6 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1">
+                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-2xl bg-accent text-primary">
                   <vp.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-sm font-bold">{vp.title}</h3>
@@ -185,10 +214,10 @@ const Index = () => {
       </section>
 
       {/* For Parents / For Educators */}
-      <section className="bg-accent/50 py-24">
+      <section className="bg-accent py-24">
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md">
               <h3 className="text-2xl font-bold">For Parents</h3>
               <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Screen-smart STEM play (core learning works without an app)</li>
@@ -197,11 +226,11 @@ const Index = () => {
                 <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Safe, durable materials designed for real play</li>
                 <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Builds confidence, curiosity, and persistence</li>
               </ul>
-              <Button asChild className="mt-6 shadow-sm shadow-primary/15">
+              <Button asChild className="mt-6">
                 <Link to="/waitlist">Join the Parent Waitlist</Link>
               </Button>
             </div>
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md">
               <h3 className="text-2xl font-bold">For Educators</h3>
               <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Low-prep, high-engagement STEM activities</li>
@@ -210,8 +239,8 @@ const Index = () => {
                 <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Bundle options + facilitator notes (pilot program)</li>
                 <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Easy to reset and reuse across groups</li>
               </ul>
-              <Button asChild className="mt-6 shadow-sm shadow-primary/15">
-                <Link to="/schools">Request a School Pilot</Link>
+              <Button asChild className="mt-6">
+                <Link to="/contact">Request a School Pilot</Link>
               </Button>
             </div>
           </div>
@@ -221,7 +250,7 @@ const Index = () => {
       {/* Newsletter / Waitlist capture */}
       <section className="py-24">
         <div className="container">
-          <div className="mx-auto max-w-lg rounded-2xl border border-border bg-gradient-to-b from-accent to-background p-10 text-center shadow-sm">
+          <div className="mx-auto max-w-lg rounded-3xl border border-border bg-card p-10 text-center shadow-warm">
             <h2 className="text-2xl font-bold">Stay in the loop</h2>
             <p className="mt-3 text-sm text-muted-foreground">
               Get pilot updates, early access, and STEM tips. No spam — ever.
