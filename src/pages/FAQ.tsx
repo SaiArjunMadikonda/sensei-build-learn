@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 const faqs = [
   {
     q: "Are SenseI kits anti-screen?",
-    a: "Not at all. We believe in balanced, screen-smart learning. SenseI complements digital tools by adding the tactile, hands-on exploration that screens can't replicate. Think of us as the other half of a complete learning experience.",
+    a: "Not at all. SenseI is screen-smart — we complement digital tools by adding the tactile, hands-on exploration that screens can't replicate. Think of us as the other half of a well-rounded learning experience.",
   },
   {
     q: "What ages are the kits designed for?",
@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "How often will new kits be released?",
-    a: "We're focused on perfecting our first three kits before expanding. New kits and expansion packs are planned, but we'll share timelines as they become concrete. Quality comes first.",
+    a: "We're focused on perfecting our first three kits before expanding. New kits and expansion packs are planned — we'll share timelines as they become concrete. Quality comes first.",
   },
   {
     q: "What materials are used? Are they safe?",
@@ -21,19 +21,19 @@ const faqs = [
   },
   {
     q: "Can my child do the kits independently?",
-    a: "Yes! Each kit is designed for independent play with clear, illustrated challenge cards. We recommend adult guidance for the first session, after which most kids are off and running on their own.",
+    a: "Yes — each kit is designed for independent play with clear, illustrated mission cards. We recommend adult guidance for the first session, after which most kids are off and running on their own.",
   },
   {
     q: "Do you ship internationally?",
-    a: "We're launching with domestic shipping first. International shipping is on our roadmap — join the waitlist to stay updated on availability in your region.",
+    a: "We're launching with U.S. domestic shipping first. International shipping is on our roadmap — join the waitlist to stay updated on availability in your region.",
   },
   {
     q: "Can I buy these for a school or after-school program?",
-    a: "Absolutely! We offer classroom bundles with volume pricing and a pilot program for schools. Visit our Schools page or fill out an educator inquiry to get started.",
+    a: "Absolutely. We offer classroom bundles with volume pricing and a pilot program for schools. Visit our Schools page or fill out an educator inquiry to get started.",
   },
   {
     q: "What's included in each kit?",
-    a: "Every kit includes physical materials, progressive challenge cards, an illustrated concept guide, and achievement stickers. Everything you need is in the box — no extra purchases required.",
+    a: "Every kit includes real materials, progressive mission cards, an illustrated concept guide, and achievement stickers. Everything you need is in the box — no extra purchases required.",
   },
 ];
 
