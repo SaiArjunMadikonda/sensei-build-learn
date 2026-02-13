@@ -8,8 +8,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { KitsPage, KitDetailPage } from "./pages/Kits";
 import HowItWorks from "./pages/HowItWorks";
-import Workshops from "./pages/Workshops";
-import Schools from "./pages/Schools";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
@@ -29,8 +27,6 @@ const App = () => (
             <Route path="/kits" element={<KitsPage />} />
             <Route path="/kits/:kitId" element={<KitDetailPage />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/workshops" element={<Workshops />} />
-            <Route path="/schools" element={<Schools />} />
             <Route path="/about" element={<About />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />

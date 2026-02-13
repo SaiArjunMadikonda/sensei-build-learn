@@ -10,12 +10,30 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles } from "lucide-react";
 
 const valueProps = [
-  { icon: Puzzle, title: "Hands-On Learning", desc: "Physical materials that make abstract STEM concepts click." },
-  { icon: BookOpen, title: "Guided Challenges", desc: "Step-by-step cards with clear goals — no prep needed." },
-  { icon: Lightbulb, title: "Independent Play", desc: "Designed for kids to explore, build, and learn on their own." },
-  { icon: Repeat, title: "Repeatable Progression", desc: "Each kit builds skills through progressive difficulty." },
-  { icon: Users, title: "Parent & Teacher Friendly", desc: "Minimal setup. Maximum engagement. Works at home or school." },
+  { icon: Puzzle, title: "Hands-On Learning", desc: "Real materials that make abstract STEM concepts click." },
+  { icon: BookOpen, title: "Guided Challenges", desc: "Mission cards with clear goals — no long manuals or parent prep." },
+  { icon: Lightbulb, title: "Independent Play", desc: "Kids can start quickly and keep going on their own." },
+  { icon: Repeat, title: "Repeatable Progression", desc: "Short missions that build skill-by-skill, from easy wins to bigger builds." },
+  { icon: Users, title: "Parent & Teacher Friendly", desc: "Minimal setup, quick reset, built for busy homes and classrooms." },
 ];
+
+const kitBullets: Record<string, string[]> = {
+  "balance-forces-lab": [
+    "Build balance systems and test how weight, distance, and leverage change outcomes",
+    "Learn equilibrium, torque, and center of mass through hands-on missions",
+    "15–30 minute challenges with level-up difficulty",
+  ],
+  "cause-effect-lab": [
+    "Create simple systems where one action triggers the next",
+    "Explore variables like force, friction, and timing by experimenting",
+    "Missions → free-play mode: kids invent their own experiments",
+  ],
+  "logic-builders-kit": [
+    "Solve puzzles using rules, patterns, and constraints",
+    "Practice sequencing, debugging, and reasoning skills",
+    "Fast, satisfying missions that build focus and persistence",
+  ],
+};
 
 const Index = () => {
   return (
@@ -33,25 +51,25 @@ const Index = () => {
         <div className="container py-24 md:py-32">
           <div className="mx-auto max-w-3xl text-center">
             <Badge variant="secondary" className="mb-6 gap-1.5 px-4 py-1.5 text-sm font-medium border border-border">
-              <Sparkles className="h-3.5 w-3.5" /> Pilot launching soon
+              <Sparkles className="h-3.5 w-3.5" /> Pilot launching soon — early access opens first
             </Badge>
             <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
               Hands-on STEM that kids{" "}
               <span className="text-primary">actually finish.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Concept-based toys with guided challenges that build real problem-solving — at home or in the classroom.
+              Concept-based kits for ages 6–8 that turn big ideas into builds, experiments, and 'aha' moments — at home or in the classroom.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" className="px-8 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
                 <Link to="/waitlist">Join Waitlist</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="px-8">
-                <Link to="/kits">See Kits <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
+                <Link to="/kits">Explore Kits <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
               </Button>
             </div>
             <p className="mt-4 text-xs text-muted-foreground">
-              We only email SenseI updates. No spam.
+              Join for pilot invites + launch updates. No spam.
             </p>
           </div>
         </div>
@@ -60,8 +78,11 @@ const Index = () => {
       {/* Social Proof */}
       <section className="border-y border-border/40 bg-accent/50 py-8">
         <div className="container">
-          <p className="mb-4 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
-            Trusted by forward-thinking parents & educators
+          <p className="mb-2 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            Built with forward-thinking parents & educators
+          </p>
+          <p className="mb-4 text-center text-sm text-muted-foreground">
+            Pilot partners and testimonials coming soon.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 opacity-40">
             {["Partner School A", "STEM Network", "Education Weekly", "Parent Magazine"].map((name) => (
@@ -79,7 +100,7 @@ const Index = () => {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our First Three Kits</h2>
             <p className="mt-4 text-muted-foreground">
-              Each kit is a complete STEM experience — concept cards, real materials, and guided challenges.
+              Each kit includes mission cards, real materials, and progressive challenges that build confidence and real problem-solving.
             </p>
           </div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -96,19 +117,16 @@ const Index = () => {
                   </div>
                   <h3 className="text-lg font-bold">{kit.name}</h3>
                   <ul className="mt-3 space-y-2">
-                    {kit.bullets.map((b) => (
+                    {(kitBullets[kit.id] || kit.bullets).map((b) => (
                       <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                         {b}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-5 flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1">
-                      <Link to={`/kits/${kit.id}`}>Details</Link>
-                    </Button>
-                    <Button asChild size="sm" className="flex-1 shadow-sm shadow-primary/15">
-                      <Link to="/waitlist">Join Waitlist</Link>
+                  <div className="mt-5">
+                    <Button asChild size="sm" className="w-full shadow-sm shadow-primary/15">
+                      <Link to="/waitlist">Join Waitlist for This Kit</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -124,22 +142,22 @@ const Index = () => {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">The Hands-on Gap</h2>
             <p className="mt-4 text-center text-muted-foreground">
-              Research shows that children learn best when they can touch, build, and experiment. Yet hands-on STEM experiences are disappearing from everyday childhood.
+              Kids have more access to information than ever — but fewer chances to build, test, and learn through real materials. SenseI brings hands-on learning back in a way that fits modern routines.
             </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {[
-                { stat: "85%", label: "of parents say kids need more hands-on learning" },
-                { stat: "2x", label: "better concept retention with physical materials" },
-                { stat: "60%", label: "of schools lack STEM enrichment resources" },
+                { title: "More watching, less making", text: "Kids need structured opportunities to build and experiment." },
+                { title: "Hands-on practice drives understanding", text: "Physical exploration helps concepts stick through real feedback." },
+                { title: "Parents & schools need low-prep STEM", text: "Great activities exist — but they must be easy to start and repeat." },
               ].map((item) => (
-                <div key={item.stat} className="rounded-2xl border border-border bg-card p-7 text-center shadow-sm">
-                  <div className="text-4xl font-extrabold text-primary">{item.stat}</div>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.label}</p>
+                <div key={item.title} className="rounded-2xl border border-border bg-card p-7 text-center shadow-sm">
+                  <div className="text-lg font-bold text-primary">{item.title}</div>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
                 </div>
               ))}
             </div>
             <p className="mt-10 text-center text-sm text-muted-foreground">
-              SenseI isn't anti-screen — we believe in balanced, screen-smart learning. Our kits complement digital tools by adding the tactile, exploratory experiences kids need.
+              SenseI isn't anti-screen — we're screen-smart. We complement digital learning by adding the tactile, exploratory practice kids need.
             </p>
           </div>
         </div>
@@ -150,7 +168,7 @@ const Index = () => {
         <div className="container">
           <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Why SenseI?</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
-            We designed every kit around how kids actually learn — through play, progression, and real-world thinking.
+            We design every kit around how kids actually learn: hands-on practice, clear goals, and progress you can see.
           </p>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {valueProps.map((vp) => (
@@ -173,27 +191,27 @@ const Index = () => {
             <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
               <h3 className="text-2xl font-bold">For Parents</h3>
               <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Screen-free, independent STEM play</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> No prep required — open and go</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Real learning with visible progress</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Safe, high-quality materials</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Builds confidence and curiosity</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Screen-smart STEM play (core learning works without an app)</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Open-and-go: start in minutes, no prep required</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Visible progress: missions kids want to finish</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Safe, durable materials designed for real play</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Builds confidence, curiosity, and persistence</li>
               </ul>
               <Button asChild className="mt-6 shadow-sm shadow-primary/15">
-                <Link to="/waitlist">Join as a Parent</Link>
+                <Link to="/waitlist">Join the Parent Waitlist</Link>
               </Button>
             </div>
             <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
               <h3 className="text-2xl font-bold">For Educators</h3>
               <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Low-prep, high-engagement activities</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Aligned with key STEM skills</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Works in classroom or after-school</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Classroom bundles available</li>
-                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Pilot programs for schools</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Low-prep, high-engagement STEM activities</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Supports problem-solving, reasoning, and teamwork</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Works for classrooms, after-school, and enrichment</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Bundle options + facilitator notes (pilot program)</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Easy to reset and reuse across groups</li>
               </ul>
               <Button asChild className="mt-6 shadow-sm shadow-primary/15">
-                <Link to="/schools">Learn More</Link>
+                <Link to="/schools">Request a School Pilot</Link>
               </Button>
             </div>
           </div>
