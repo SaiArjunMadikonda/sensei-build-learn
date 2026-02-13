@@ -22,9 +22,9 @@ const KitsPage = () => {
       <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight">STEM Kits</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight">Our First Three Kits</h1>
             <p className="mt-3 text-muted-foreground">
-              Hands-on learning experiences designed for curious kids ages 6–8.
+              Each kit includes mission cards, real materials, and a companion-guided experience that turns learning into an adventure.
             </p>
           </div>
         </div>
@@ -45,6 +45,7 @@ const KitsPage = () => {
                     <ProductChip>{kit.difficulty}</ProductChip>
                   </div>
                   <h2 className="text-xl font-bold">{kit.name}</h2>
+                  <p className="mt-1 text-xs font-medium text-primary">Companion-guided missions &bull; 15–30 min builds</p>
                   <p className="mt-1.5 text-sm text-muted-foreground">{kit.tagline}</p>
                   <ul className="mt-4 space-y-1.5">
                     {kit.bullets.map((b) => (
@@ -58,7 +59,7 @@ const KitsPage = () => {
                       <Link to={`/kits/${kit.id}`}>View Details</Link>
                     </Button>
                     <Button asChild className="flex-1">
-                      <Link to="/waitlist">Waitlist</Link>
+                      <Link to="/waitlist">Get Early Access</Link>
                     </Button>
                   </div>
                 </CardContent>
