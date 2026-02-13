@@ -4,36 +4,52 @@ import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
-    q: "Are SenseI kits anti-screen?",
-    a: "Not at all. SenseI is screen-smart — we complement digital tools by adding the tactile, hands-on exploration that screens can't replicate. Think of us as the other half of a well-rounded learning experience.",
+    q: "What is SenseI?",
+    a: "SenseI makes hands-on STEM kits for kids (starting with ages 6\u20138) that use real materials and mission-style challenges to build problem-solving, confidence, and concept understanding through play.",
   },
   {
-    q: "What ages are the kits designed for?",
-    a: "Our first three kits are designed for kids ages 6–8. We're actively developing kits for the broader 3–12 range, which will be released in future collections.",
+    q: "Who are the kits for?",
+    a: "Our first three kits are designed for kids ages 6\u20138 (early elementary). We\u2019re expanding the roadmap to cover ages 3\u201312 with age-tiered kits and difficulty levels.",
   },
   {
-    q: "How often will new kits be released?",
-    a: "We're focused on perfecting our first three kits before expanding. New kits and expansion packs are planned — we'll share timelines as they become concrete. Quality comes first.",
+    q: "How long does an activity take?",
+    a: "Most missions take 15\u201330 minutes, with optional extension challenges if your child wants to keep building.",
   },
   {
-    q: "What materials are used? Are they safe?",
-    a: "All SenseI materials are non-toxic and meet ASTM F963 safety standards. We use high-quality wood, recycled plastics, and durable components designed to withstand enthusiastic play. Each kit includes detailed safety information.",
+    q: "Do kids need a screen or app to use SenseI?",
+    a: "No. The core experience is fully hands-on and works without a screen. Over time, we may offer an optional companion layer for hints or progress tracking\u2014but tactile play always comes first.",
   },
   {
-    q: "Can my child do the kits independently?",
-    a: "Yes — each kit is designed for independent play with clear, illustrated mission cards. We recommend adult guidance for the first session, after which most kids are off and running on their own.",
+    q: "Can my child do these independently?",
+    a: "Yes\u2014most missions are designed for independent play with minimal setup. Some kids may enjoy doing the first mission with a parent or educator, then continuing on their own.",
   },
   {
-    q: "Do you ship internationally?",
-    a: "We're launching with U.S. domestic shipping first. International shipping is on our roadmap — join the waitlist to stay updated on availability in your region.",
+    q: "What skills will my child build?",
+    a: "Each kit supports skills like reasoning, experimentation, persistence, and problem-solving\u2014plus concept-specific learning (forces/balance, cause-effect systems, logic/patterns).",
   },
   {
-    q: "Can I buy these for a school or after-school program?",
-    a: "Absolutely. We offer classroom bundles with volume pricing and a pilot program for schools. Visit our Schools page or fill out an educator inquiry to get started.",
+    q: "What\u2019s included in each kit?",
+    a: "Each kit includes mission cards, real materials, and progressive challenges. Exact contents vary by kit and are listed on each kit\u2019s detail page.",
   },
   {
-    q: "What's included in each kit?",
-    a: "Every kit includes real materials, progressive mission cards, an illustrated concept guide, and achievement stickers. Everything you need is in the box — no extra purchases required.",
+    q: "Are the materials safe?",
+    a: "We design for safety and durability and will share final material details, age guidance, and care instructions with pilot families and schools.",
+  },
+  {
+    q: "Can schools or after-school programs use SenseI?",
+    a: "Yes. We support classroom and program use with bundle options and pilot-friendly onboarding. Submit a School Pilot request and tell us your group size and grade range.",
+  },
+  {
+    q: "Do you offer lesson plans or educator notes?",
+    a: "For pilot partners, we provide simple facilitator guidance (setup, timing, learning goals, and extensions). We\u2019re building this out based on educator feedback.",
+  },
+  {
+    q: "When is the pilot launching, and how do I join?",
+    a: "We\u2019re opening pilot access in small groups. Join the waitlist and select Parent or Educator\u2014we\u2019ll email invites as spots open.",
+  },
+  {
+    q: "Where do you ship?",
+    a: "We plan to start with domestic shipping during the pilot/early launch, then expand. Join the waitlist and share your location.",
   },
 ];
 
