@@ -47,7 +47,7 @@ const Index = () => {
     <Layout>
       <Helmet>
         <title>SenseI | Hands-on STEM Kits for Kids 6–8</title>
-        <meta name="description" content="Concept-based STEM kits with guided challenges that build real problem-solving skills - at home or in the classroom. Ages 6–8." />
+        <meta name="description" content="Concept-based STEM kits with guided challenges that build real problem-solving skills at home or in the classroom. Ages 6–8." />
         <meta property="og:title" content="SenseI | Hands-on STEM Kits for Kids 6–8" />
         <meta property="og:description" content="Hands-on STEM that kids actually finish. Guided challenges, real materials, real learning." />
       </Helmet>
@@ -64,14 +64,14 @@ const Index = () => {
             {/* Text */}
             <div className="text-center lg:text-left">
               <Badge variant="secondary" className="mb-6 gap-1.5 border border-border px-4 py-1.5 text-sm font-medium">
-                <Sparkles className="h-3.5 w-3.5" /> Learning Companion - Pilot access opening soon
+                <Sparkles className="h-3.5 w-3.5" /> Learning Companion · Pilot access opening soon
               </Badge>
               <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                 Kits that come alive with a{" "}
                 <span className="text-primary">learning companion.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
-                Hands-on STEM kits for ages 6–8 where kids build with real materials - while the SenseI Companion guides missions, offers gentle hints, and celebrates progress.
+                Hands-on STEM kits for ages 6–8 where kids build with real materials while the SenseI Companion guides missions, offers gentle hints, and celebrates progress.
               </p>
 
               {/* Product chips */}
@@ -177,7 +177,7 @@ const Index = () => {
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
               { title: "Guides the Mission", desc: "Step-by-step prompts that help kids start fast and stay on track." },
-              { title: "Hints, Not Answers", desc: "Gentle nudges when they\u2019re stuck - so they learn by thinking, not copying." },
+              { title: "Hints, Not Answers", desc: "Gentle nudges when they\u2019re stuck, so they learn by thinking, not copying." },
               { title: "Celebrates Progress", desc: "Milestones, encouragement, and \u2018level up\u2019 moments that build confidence." },
             ].map((item) => (
               <div key={item.title} className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1">
@@ -198,13 +198,13 @@ const Index = () => {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">The Hands-on Gap</h2>
             <p className="mt-4 mx-auto max-w-2xl text-center text-muted-foreground">
-              Kids have more access to information than ever - but fewer chances to build, test, and learn through real materials. SenseI brings hands-on learning back in a way that fits modern routines.
+              Kids have more access to information than ever, but fewer chances to build, test, and learn through real materials. SenseI brings hands-on learning back in a way that fits modern routines.
             </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {[
                 { title: "More watching, less making", text: "Kids need structured opportunities to build and experiment." },
                 { title: "Hands-on practice drives understanding", text: "Physical exploration helps concepts stick through real feedback." },
-                { title: "Parents & schools need low-prep STEM", text: "Great activities exist - but they must be easy to start and repeat." },
+                { title: "Parents & schools need low-prep STEM", text: "Great activities exist, but they must be easy to start and repeat." },
               ].map((item) => (
                 <div key={item.title} className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1">
                   <div className="text-lg font-bold text-primary-deep">{item.title}</div>
@@ -213,7 +213,7 @@ const Index = () => {
               ))}
             </div>
             <p className="mt-10 text-center text-sm text-muted-foreground">
-              SenseI isn't anti-screen - we're screen-smart. We complement digital learning by adding the tactile, exploratory practice kids need.
+              SenseI isn't anti-screen. We're screen-smart. We complement digital learning by adding the tactile, exploratory practice kids need.
             </p>
           </div>
         </div>
@@ -280,7 +280,7 @@ const Index = () => {
           <div className="mx-auto max-w-lg rounded-3xl border border-border bg-card p-10 text-center shadow-warm">
             <h2 className="text-2xl font-bold">Stay in the loop</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Get pilot updates, early access, and STEM tips. No spam - ever.
+              Get pilot updates, early access, and STEM tips. No spam, ever.
             </p>
             <div className="mt-6">
               <WaitlistForm sourcePage="home" compact showRole />

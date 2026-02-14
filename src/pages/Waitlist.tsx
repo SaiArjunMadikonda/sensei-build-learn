@@ -19,7 +19,7 @@ const WaitlistPage = () => {
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight">Join the Waitlist</h1>
             <p className="mt-4 text-muted-foreground">
-              Be first in line when our pilot launches. No spam - just updates on hands-on STEM kits for curious kids.
+              Be first in line when our pilot launches. No spam, just updates on hands-on STEM kits for curious kids.
             </p>
           </div>
         </div>

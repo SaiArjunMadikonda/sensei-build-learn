@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 const steps = [
   { num: "01", title: "Choose a kit", desc: "Pick a kit built for your child\u2019s age and interests (ages 6–8 for our first launch). Each kit focuses on one core concept so learning stays clear and satisfying." },
   { num: "02", title: "Start a mission card", desc: "Open a mission card with a simple goal (\u201CMake it balance.\u201D \u201CTrigger the chain.\u201D \u201CSolve the pattern.\u201D). Kids know exactly what \u201Cdone\u201D looks like." },
-  { num: "03", title: "Build & test", desc: "Use real materials to build, experiment, and test. Kids learn by trying, adjusting, and seeing what changes - not by memorizing." },
+  { num: "03", title: "Build & test", desc: "Use real materials to build, experiment, and test. Kids learn by trying, adjusting, and seeing what changes, not by memorizing." },
   { num: "04", title: "The Companion guides and gives hints", desc: "As kids work through each mission, the SenseI Companion offers gentle prompts, nudges when they\u2019re stuck, and celebrates when they break through." },
-  { num: "05", title: "Level up to the next challenge", desc: "Move to the next mission for a slightly harder challenge. Skills build progressively - confidence compounds." },
+  { num: "05", title: "Level up to the next challenge", desc: "Move to the next mission for a slightly harder challenge. Skills build progressively and confidence compounds." },
 ];
 
 const HowItWorks = () => {
@@ -17,7 +17,7 @@ const HowItWorks = () => {
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight">How It Works</h1>
             <p className="mt-3 text-muted-foreground">
-              Designed for minimal setup, maximum learning - with progress kids can feel.
+              Designed for minimal setup, maximum learning, with progress kids can feel.
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@ const HowItWorks = () => {
             <Badge variant="secondary" className="mb-3">Pilot Access Opening Soon</Badge>
             <h2 className="text-2xl font-bold">The SenseI Learning Companion</h2>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Every kit comes alive with the SenseI Companion - a friendly guide that walks kids through missions, offers gentle hints when they're stuck, and celebrates progress along the way. Tactile play always comes first; the Companion is designed to enhance, not replace, hands-on learning.
+              Every kit comes alive with the SenseI Companion, a friendly guide that walks kids through missions, offers gentle hints when they're stuck, and celebrates progress along the way. Tactile play always comes first; the Companion is designed to enhance, not replace, hands-on learning.
             </p>
           </div>
         </div>
