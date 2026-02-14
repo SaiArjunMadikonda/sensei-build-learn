@@ -9,7 +9,7 @@ import { ArrowRight, Play, Sparkles, Image as ImageIcon } from "lucide-react";
 
 const miniFeatures = [
   { title: "Guides the Mission", desc: "Step-by-step prompts that help kids start fast and stay on track." },
-  { title: "Hints, Not Answers", desc: "Gentle nudges when they\u2019re stuck \u2014 so they learn by thinking, not copying." },
+  { title: "Hints, Not Answers", desc: "Gentle nudges when they\u2019re stuck - so they learn by thinking, not copying." },
   { title: "Celebrates Progress", desc: "Milestones and encouragement that build confidence and persistence." },
 ];
 
@@ -42,8 +42,8 @@ const Mini = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Mini \u2014 The SenseI Learning Companion</title>
-        <meta name="description" content="Meet Mini \u2014 SenseI\u2019s learning companion that guides kids through hands-on STEM missions with hints, encouragement, and celebration." />
+        <title>Mini - The SenseI Learning Companion</title>
+        <meta name="description" content="Meet Mini - SenseI's learning companion that guides kids through hands-on STEM missions with hints, encouragement, and celebration." />
       </Helmet>
 
       {/* Hero */}
@@ -61,7 +61,7 @@ const Mini = () => {
                 Meet <span className="text-primary">Mini.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
-                Mini is SenseI&rsquo;s learning companion &mdash; guiding kids through hands-on missions, giving gentle hints, and celebrating progress.
+                Mini is SenseI&rsquo;s learning companion - guiding kids through hands-on missions, giving gentle hints, and celebrating progress.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-8 shadow-warm-md hover:shadow-warm-lg">
@@ -163,7 +163,7 @@ const Mini = () => {
             <div className="rounded-3xl border border-border bg-card p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md">
               <h3 className="text-2xl font-bold">For Parents</h3>
               <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-2.5"><span className="text-primary font-bold">&check;</span> Less explaining &mdash; more independent learning</li>
+                <li className="flex gap-2.5"><span className="text-primary font-bold">&check;</span> Less explaining - more independent learning</li>
                 <li className="flex gap-2.5"><span className="text-primary font-bold">&check;</span> Encouragement that helps kids finish what they start</li>
                 <li className="flex gap-2.5"><span className="text-primary font-bold">&check;</span> Hands-on, screen-smart support</li>
               </ul>
