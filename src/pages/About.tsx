@@ -21,7 +21,7 @@ const About = () => {
               Learning that feels alive.
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
-              SenseI creates hands-on STEM kits that turn big ideas into real experiences — kids build, test, adjust, and discover with their own hands. We're starting with ages 6–8, and expanding from there.
+              SenseI creates hands-on STEM kits that turn big ideas into real experiences - kids build, test, adjust, and discover with their own hands. We're starting with ages 6–8, and expanding from there.
             </p>
           </div>
         </div>
@@ -33,13 +33,13 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-bold">Our Story</h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
-                SenseI was born from a simple truth: children learn best when learning becomes physical. Before screens took over, childhood was full of making — stacking, balancing, planting, building, breaking, fixing, and asking "why?" Touch is the first language a child understands, and it's how curiosity turns into confidence.
+                SenseI was born from a simple truth: children learn best when learning becomes physical. Before screens took over, childhood was full of making - stacking, balancing, planting, building, breaking, fixing, and asking "why?" Touch is the first language a child understands, and it's how curiosity turns into confidence.
               </p>
               <p className="mt-3 text-muted-foreground leading-relaxed">
-                But today, many kids spend more time watching than doing. They scroll through concepts instead of experiencing them. They get answers instantly — but lose the deep satisfaction of figuring things out.
+                But today, many kids spend more time watching than doing. They scroll through concepts instead of experiencing them. They get answers instantly - but lose the deep satisfaction of figuring things out.
               </p>
               <p className="mt-3 text-muted-foreground leading-relaxed">
-                So we set out to build something different: screen-smart, not screen-heavy. Premium kits with real materials and guided challenges — so kids can pick one up, build something real, and understand why it works.
+                So we set out to build something different: screen-smart, not screen-heavy. Premium kits with real materials and guided challenges - so kids can pick one up, build something real, and understand why it works.
               </p>
               <p className="mt-3 text-muted-foreground leading-relaxed font-medium text-foreground">
                 Because children don't remember what they scroll. They remember what they touch.
@@ -54,22 +54,22 @@ const About = () => {
                 </p>
               </div>
               <p className="mt-3 text-center text-muted-foreground leading-relaxed">
-                We exist to help children grow into confident makers — through hands-on learning that feels real, memorable, and empowering.
+                We exist to help children grow into confident makers - through hands-on learning that feels real, memorable, and empowering.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold">Our Vision</h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
-                We imagine a world where every home and classroom has a small maker corner — a place where kids learn by building, testing, failing, fixing, and discovering.
+                We imagine a world where every home and classroom has a small maker corner - a place where kids learn by building, testing, failing, fixing, and discovering.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 SenseI is building toward a future where:
               </p>
               <ul className="mt-2 space-y-2 text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Learning feels alive</strong> — guided by stories, challenges, and a companion character that motivates kids to keep going.</span></li>
-                <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Kids gain real skills:</strong> problem-solving, patience, curiosity, and confidence — not just information.</span></li>
-                <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Toys don't become clutter</strong> — they become a growing journey of experiences that kids remember.</span></li>
+                <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Learning feels alive</strong> - guided by stories, challenges, and a companion character that motivates kids to keep going.</span></li>
+                <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Kids gain real skills:</strong> problem-solving, patience, curiosity, and confidence - not just information.</span></li>
+                <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Toys don't become clutter</strong> - they become a growing journey of experiences that kids remember.</span></li>
               </ul>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 And as our kit library grows, we want to keep it sustainable: a trade-in / second-life program where families return outgrown kits for credit, so products can be refurbished, reused, or responsibly recycled.
