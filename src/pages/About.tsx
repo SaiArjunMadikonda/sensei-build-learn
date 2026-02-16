@@ -1,5 +1,8 @@
 import Layout from "@/components/layout/Layout";
 import { Lightbulb, Puzzle, Trophy, Gem, Baby, Recycle } from "lucide-react";
+import founderArjun from "@/assets/founder-arjun.jpg";
+import founderKiran from "@/assets/founder-kiran.jpg";
+import founderLohith from "@/assets/founder-lohith.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Curiosity", desc: "We design for \"What happens if I try this?\"" },
@@ -10,18 +13,24 @@ const values = [
   { icon: Recycle, title: "Second Life by Design", desc: "Built to be reused, returned, and passed forward." },
 ];
 
+const team = [
+  { name: "Sai Arjun Madikonda", role: "Co-founder", photo: founderArjun },
+  { name: "Sai Kiran Soma", role: "Co-founder", photo: founderKiran },
+  { name: "Datta Lohith", role: "Co-founder", photo: founderLohith },
+];
+
 const About = () => {
   return (
     <Layout>
       <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight">About SenseI</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight">About Sense-i</h1>
             <p className="mt-3 text-lg font-medium text-foreground">
               Learning that feels alive.
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
-              SenseI creates hands-on STEM kits that turn big ideas into real experiences. Kids build, test, adjust, and discover with their own hands. We're starting with ages 6–8, and expanding from there.
+              Sense-i creates hands-on STEM kits that turn big ideas into real experiences. Kids build, test, adjust, and discover with their own hands. We're starting with ages 6–8, and expanding from there.
             </p>
           </div>
         </div>
@@ -33,7 +42,7 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-bold">Our Story</h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
-                SenseI was born from a simple truth: children learn best when learning becomes physical. Before screens took over, childhood was full of making: stacking, balancing, planting, building, breaking, fixing, and asking "why?" Touch is the first language a child understands, and it's how curiosity turns into confidence.
+                Sense-i was born from a simple truth: children learn best when learning becomes physical. Before screens took over, childhood was full of making: stacking, balancing, planting, building, breaking, fixing, and asking "why?" Touch is the first language a child understands, and it's how curiosity turns into confidence.
               </p>
               <p className="mt-3 text-muted-foreground leading-relaxed">
                 But today, many kids spend more time watching than doing. They scroll through concepts instead of experiencing them. They get answers instantly, but lose the deep satisfaction of figuring things out.
@@ -64,7 +73,7 @@ const About = () => {
                 We imagine a world where every home and classroom has a small maker corner, a place where kids learn by building, testing, failing, fixing, and discovering.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                SenseI is building toward a future where:
+                Sense-i is building toward a future where:
               </p>
               <ul className="mt-2 space-y-2 text-muted-foreground leading-relaxed">
                 <li className="flex gap-2"><span className="text-primary">•</span><span><strong className="text-foreground">Learning feels alive</strong>, guided by stories, challenges, and a companion character that motivates kids to keep going.</span></li>
@@ -94,13 +103,13 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-bold">The Team</h2>
               <div className="mt-6 grid gap-6 sm:grid-cols-3">
-                {["Founder 1", "Founder 2", "Advisor"].map((name) => (
-                  <div key={name} className="rounded-3xl border border-border bg-card p-5 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-0.5">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-                      <span className="text-xs text-muted-foreground">Photo</span>
+                {team.map((member) => (
+                  <div key={member.name} className="rounded-3xl border border-border bg-card p-5 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-0.5">
+                    <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-border">
+                      <img src={member.photo} alt={member.name} className="h-full w-full object-cover" />
                     </div>
-                    <h3 className="mt-3 font-semibold">{name}</h3>
-                    <p className="text-xs text-muted-foreground">Role placeholder</p>
+                    <h3 className="mt-3 font-semibold">{member.name}</h3>
+                    <p className="text-xs text-muted-foreground">{member.role}</p>
                   </div>
                 ))}
               </div>

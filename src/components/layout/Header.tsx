@@ -8,7 +8,7 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/kits", label: "Kits" },
   { to: "/how-it-works", label: "How It Works" },
-  { to: "/mini", label: "Mini" },
+  { to: "/mini", label: "MiNy" },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
@@ -25,7 +25,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border/40 bg-background/90 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="SenseI — Build it. Try it. Learn it!" className="h-10 w-auto" />
+          <img src={logo} alt="Sense-i — Build it. Try it. Learn it!" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}

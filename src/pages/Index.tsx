@@ -46,9 +46,9 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>SenseI | Hands-on STEM Kits for Kids 6–8</title>
+        <title>Sense-i | Hands-on STEM Kits for Kids 6–8</title>
         <meta name="description" content="Concept-based STEM kits with guided challenges that build real problem-solving skills at home or in the classroom. Ages 6–8." />
-        <meta property="og:title" content="SenseI | Hands-on STEM Kits for Kids 6–8" />
+        <meta property="og:title" content="Sense-i | Hands-on STEM Kits for Kids 6–8" />
         <meta property="og:description" content="Hands-on STEM that kids actually finish. Guided challenges, real materials, real learning." />
       </Helmet>
       <WaitlistModal />
@@ -71,7 +71,7 @@ const Index = () => {
                 <span className="text-primary">learning companion.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
-                Hands-on STEM kits for ages 6–8 where kids build with real materials while the SenseI Companion guides missions, offers gentle hints, and celebrates progress.
+                Hands-on STEM kits for ages 6–8 where kids build with real materials while the Sense-i Companion guides missions, offers gentle hints, and celebrates progress.
               </p>
 
               {/* Product chips */}
@@ -97,7 +97,7 @@ const Index = () => {
             {/* Hero image */}
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
-                <img src={heroKits} alt="SenseI STEM kits with mission cards, building blocks, and concept guide" className="h-auto w-full object-cover" />
+                <img src={heroKits} alt="Sense-i STEM kits with mission cards, building blocks, and concept guide" className="h-auto w-full object-cover" />
               </div>
             </div>
           </div>
@@ -198,7 +198,7 @@ const Index = () => {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">The Hands-on Gap</h2>
             <p className="mt-4 mx-auto max-w-2xl text-center text-muted-foreground">
-              Kids have more access to information than ever, but fewer chances to build, test, and learn through real materials. SenseI brings hands-on learning back in a way that fits modern routines.
+              Kids have more access to information than ever, but fewer chances to build, test, and learn through real materials. Sense-i brings hands-on learning back in a way that fits modern routines.
             </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {[
@@ -213,16 +213,16 @@ const Index = () => {
               ))}
             </div>
             <p className="mt-10 text-center text-sm text-muted-foreground">
-              SenseI isn't anti-screen. We're screen-smart. We complement digital learning by adding the tactile, exploratory practice kids need.
+              Sense-i isn't anti-screen. We're screen-smart. We complement digital learning by adding the tactile, exploratory practice kids need.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why SenseI */}
+      {/* Why Sense-i */}
       <section className="bg-accent py-24">
         <div className="container">
-          <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Why SenseI?</h2>
+          <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Why Sense-i?</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
             We design every kit around how kids actually learn: hands-on practice, clear goals, and progress you can see.
           </p>
@@ -286,7 +286,7 @@ const Index = () => {
               <WaitlistForm sourcePage="home" compact showRole />
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              We only email SenseI updates. No spam.
+              We only email Sense-i updates. No spam.
             </p>
           </div>
         </div>

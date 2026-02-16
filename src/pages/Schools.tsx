@@ -70,7 +70,7 @@ const Schools = () => {
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-bold">Why Schools Love SenseI</h2>
+              <h2 className="text-2xl font-bold">Why Schools Love Sense-i</h2>
               <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-2"><span className="text-primary font-bold">✓</span> Low prep — open, distribute, go</li>
                 <li className="flex gap-2"><span className="text-primary font-bold">✓</span> High engagement across skill levels</li>
