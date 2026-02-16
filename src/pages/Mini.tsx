@@ -7,7 +7,7 @@ import Layout from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Play, Sparkles, Image as ImageIcon } from "lucide-react";
 
-const miniFeatures = [
+const minyFeatures = [
   { title: "Guides the Mission", desc: "Step-by-step prompts that help kids start fast and stay on track." },
   { title: "Hints, Not Answers", desc: "Gentle nudges when they\u2019re stuck, so they learn by thinking, not copying." },
   { title: "Celebrates Progress", desc: "Milestones and encouragement that build confidence and persistence." },
@@ -16,34 +16,34 @@ const miniFeatures = [
 const mediaTiles = [
   "Demo Clip 01 (Coming Soon)",
   "Demo Clip 02 (Coming Soon)",
-  "Mini + Balance Kit (Image Coming Soon)",
-  "Mini + Cause & Effect Lab (Coming Soon)",
-  "Mini Unboxing (Coming Soon)",
-  "Mini in the Classroom (Coming Soon)",
+  "MiNy + Balance Kit (Image Coming Soon)",
+  "MiNy + Cause & Effect Lab (Coming Soon)",
+  "MiNy Unboxing (Coming Soon)",
+  "MiNy in the Classroom (Coming Soon)",
 ];
 
 const steps = [
   { num: "01", title: "Choose a kit" },
   { num: "02", title: "Start a mission" },
   { num: "03", title: "Build & test" },
-  { num: "04", title: "Mini guides + hints" },
+  { num: "04", title: "MiNy guides + hints" },
   { num: "05", title: "Level up" },
 ];
 
-const miniFaqs = [
-  { q: "When will Mini be available?", a: "We\u2019re opening pilot access in small groups. Join the waitlist to get early invites." },
-  { q: "Does Mini replace the hands-on kits?", a: "No. The kits are hands-on by design. Mini guides missions and supports progress." },
-  { q: "Does Mini require an app?", a: "Mini is designed to keep the experience hands-on. Any companion layer will be lightweight and screen-smart." },
-  { q: "Is Mini for home or schools?", a: "Both. Mini supports independent learning at home and reduces instruction load in group settings." },
-  { q: "How do I get Mini for my child/class?", a: "Join the waitlist and tell us whether you\u2019re a parent or educator." },
+const minyFaqs = [
+  { q: "When will MiNy be available?", a: "We\u2019re opening pilot access in small groups. Join the waitlist to get early invites." },
+  { q: "Does MiNy replace the hands-on kits?", a: "No. The kits are hands-on by design. MiNy guides missions and supports progress." },
+  { q: "Does MiNy require an app?", a: "MiNy is designed to keep the experience hands-on. Any companion layer will be lightweight and screen-smart." },
+  { q: "Is MiNy for home or schools?", a: "Both. MiNy supports independent learning at home and reduces instruction load in group settings." },
+  { q: "How do I get MiNy for my child/class?", a: "Join the waitlist and tell us whether you\u2019re a parent or educator." },
 ];
 
-const Mini = () => {
+const MiNy = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Mini · The SenseI Learning Companion</title>
-        <meta name="description" content="Meet Mini, SenseI's learning companion that guides kids through hands-on STEM missions with hints, encouragement, and celebration." />
+        <title>MiNy · The Sense-i Learning Companion</title>
+        <meta name="description" content="Meet MiNy, Sense-i's learning companion that guides kids through hands-on STEM missions with hints, encouragement, and celebration." />
       </Helmet>
 
       {/* Hero */}
@@ -58,10 +58,10 @@ const Mini = () => {
                 <Sparkles className="h-3.5 w-3.5" /> Pilot access opening soon
               </Badge>
               <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                Meet <span className="text-primary">Mini.</span>
+                Meet <span className="text-primary">MiNy.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
-                Mini is SenseI&rsquo;s learning companion, guiding kids through hands-on missions, giving gentle hints, and celebrating progress.
+                MiNy is Sense-i&rsquo;s learning companion, guiding kids through hands-on missions, giving gentle hints, and celebrating progress.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-8 shadow-warm-md hover:shadow-warm-lg">
@@ -83,7 +83,7 @@ const Mini = () => {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     <Play className="h-7 w-7 text-primary" />
                   </div>
-                  <span className="text-sm font-medium">Mini Demo Video (Coming Soon)</span>
+                  <span className="text-sm font-medium">MiNy Demo Video (Coming Soon)</span>
                 </div>
               </div>
             </div>
@@ -91,17 +91,17 @@ const Mini = () => {
         </div>
       </section>
 
-      {/* What Mini Does */}
+      {/* What MiNy Does */}
       <section className="py-24">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What Mini Does</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What MiNy Does</h2>
             <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
               A friendly guide that keeps kids moving from &lsquo;stuck&rsquo; to &lsquo;I got it.&rsquo;
             </p>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {miniFeatures.map((f) => (
+            {minyFeatures.map((f) => (
               <div key={f.title} className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1">
                 <h3 className="text-lg font-bold text-primary-deep">{f.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
@@ -109,16 +109,16 @@ const Mini = () => {
             ))}
           </div>
           <p className="mt-10 text-center text-sm text-muted-foreground">
-            Mini rollout begins with early access families and educators.
+            MiNy rollout begins with early access families and educators.
           </p>
         </div>
       </section>
 
-      {/* Mini in Action */}
+      {/* MiNy in Action */}
       <section className="bg-accent py-24">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Mini in Action</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">MiNy in Action</h2>
             <p className="mt-4 text-muted-foreground">Photos and clips coming soon from our pilot program.</p>
           </div>
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -134,11 +134,11 @@ const Mini = () => {
         </div>
       </section>
 
-      {/* How Mini Works With Kits */}
+      {/* How MiNy Works With Kits */}
       <section className="py-24">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How Mini Works With Kits</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How MiNy Works With Kits</h2>
           </div>
           <div className="mx-auto mt-14 max-w-2xl space-y-4">
             {steps.map((step) => (
@@ -151,7 +151,7 @@ const Mini = () => {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-muted-foreground">
-            Hands-on first. Mini enhances the experience.
+            Hands-on first. MiNy enhances the experience.
           </p>
         </div>
       </section>
@@ -186,15 +186,15 @@ const Mini = () => {
         </div>
       </section>
 
-      {/* Mini FAQ */}
+      {/* MiNy FAQ */}
       <section className="py-24">
         <div className="container">
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Mini FAQ</h2>
-            <p className="mt-4 text-center text-muted-foreground">Common questions about the SenseI Learning Companion.</p>
+            <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">MiNy FAQ</h2>
+            <p className="mt-4 text-center text-muted-foreground">Common questions about the Sense-i Learning Companion.</p>
             <Accordion type="single" collapsible className="mt-10 space-y-2">
-              {miniFaqs.map((faq, i) => (
-                <AccordionItem key={i} value={`mini-faq-${i}`} className="rounded-2xl border border-border bg-card px-5 shadow-warm transition-all duration-200 hover:shadow-warm-md">
+              {minyFaqs.map((faq, i) => (
+                <AccordionItem key={i} value={`miny-faq-${i}`} className="rounded-2xl border border-border bg-card px-5 shadow-warm transition-all duration-200 hover:shadow-warm-md">
                   <AccordionTrigger className="text-left text-sm font-semibold">{faq.q}</AccordionTrigger>
                   <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
                 </AccordionItem>
@@ -207,4 +207,4 @@ const Mini = () => {
   );
 };
 
-export default Mini;
+export default MiNy;

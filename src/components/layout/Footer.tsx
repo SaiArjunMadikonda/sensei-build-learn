@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="SenseI" className="h-10 w-auto" />
+            <img src={logo} alt="Sense-i" className="h-10 w-auto" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Hands-on STEM kits that bring real-world learning home.
             </p>
@@ -53,11 +53,11 @@ const Footer = () => {
 
         <div className="mt-10 border-t border-border pt-6">
           <div className="flex flex-col items-center gap-2 text-xs text-muted-foreground md:flex-row md:justify-between">
-            <p>© {new Date().getFullYear()} SenseI. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Sense-i. All rights reserved.</p>
             <span>Designed for ages 6–8 (expanding). Not affiliated with any school district.</span>
           </div>
           <p className="mt-2 text-center text-xs text-muted-foreground md:text-left">
-            Privacy-first: we only use emails for SenseI updates.
+            Privacy-first: we only use emails for Sense-i updates.
           </p>
         </div>
       </div>

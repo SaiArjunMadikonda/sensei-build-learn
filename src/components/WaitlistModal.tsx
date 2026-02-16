@@ -53,7 +53,7 @@ const WaitlistModal = () => {
         <DialogHeader>
           <DialogTitle className="text-xl">Don't miss the pilot launch! 🚀</DialogTitle>
           <DialogDescription>
-            Be first to get hands-on STEM kits designed for curious kids. No spam — just launch updates.
+            Be first to get hands-on STEM kits designed for curious kids. No spam, just launch updates.
           </DialogDescription>
         </DialogHeader>
         <WaitlistForm

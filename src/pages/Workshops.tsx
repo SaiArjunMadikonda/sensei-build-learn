@@ -64,7 +64,7 @@ const Workshops = () => {
             <div>
               <h2 className="text-2xl font-bold">STEM Workshops</h2>
               <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
-                Our workshops bring the SenseI experience to life in a group setting. Perfect for weekend enrichment, 
+                Our workshops bring the Sense-i experience to life in a group setting. Perfect for weekend enrichment, 
                 after-school programs, birthday parties, and community events.
               </p>
               <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
@@ -77,7 +77,7 @@ const Workshops = () => {
               <div className="mt-8">
                 <h3 className="text-lg font-bold">Community Challenges</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Join monthly STEM challenges, share your builds, and connect with other SenseI families. Coming soon!
+                  Join monthly STEM challenges, share your builds, and connect with other Sense-i families. Coming soon!
                 </p>
               </div>
 
