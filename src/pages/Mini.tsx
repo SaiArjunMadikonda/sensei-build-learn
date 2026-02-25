@@ -126,7 +126,8 @@ const MiNy = () => {
             <MediaFrame
               className="w-full"
               aspectClassName="aspect-auto"
-              contentClassName="flex items-center justify-center bg-background"
+              frameClassName="bg-transparent border-none shadow-none p-0"
+              contentClassName="flex items-center justify-center"
             >
               <video
                 className="mx-auto block h-auto max-h-[560px] w-auto max-w-full object-contain"
