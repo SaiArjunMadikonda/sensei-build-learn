@@ -37,8 +37,8 @@ const KitsPage = () => {
           <div className="grid gap-8 md:grid-cols-3">
             {kits.map((kit) => (
               <Card key={kit.id} className="group flex flex-col overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1">
-                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-accent to-secondary">
-                  <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
+                <div className="h-52 overflow-hidden">
+                  <img src={kit.image} alt={kit.name} className="h-full w-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="flex flex-1 flex-col p-6">
                   <div className="mb-3 flex flex-wrap gap-1.5">
@@ -108,8 +108,8 @@ const KitDetailPage = () => {
             <Link to="/kits"><ArrowLeft className="mr-1.5 h-4 w-4" /> All Kits</Link>
           </Button>
           <div className="grid gap-10 lg:grid-cols-2">
-            <div className="flex h-64 items-center justify-center rounded-3xl bg-gradient-to-br from-accent to-secondary shadow-warm lg:h-96">
-              <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
+            <div className="overflow-hidden rounded-3xl shadow-warm lg:h-96">
+              <img src={kit.image} alt={kit.name} className="h-full w-full object-cover" loading="lazy" />
             </div>
             <div>
               <div className="flex flex-wrap gap-1.5 mb-3">
