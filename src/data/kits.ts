@@ -1,3 +1,12 @@
+import kitCauseEffect from "@/assets/kit-cause-effect.jpg";
+import kitCauseEffectKid from "@/assets/kit-cause-effect-kid.jpg";
+import kitCauseEffectKid2 from "@/assets/kit-cause-effect-kid2.jpg";
+import kitBalancePath from "@/assets/kit-balance-path.jpg";
+import kitBalanceKid from "@/assets/kit-balance-kid.jpg";
+import kitBalanceKid2 from "@/assets/kit-balance-kid2.jpg";
+import kitElectricity from "@/assets/kit-electricity.jpg";
+import kitElectricityKid from "@/assets/kit-electricity-kid.jpg";
+
 export interface Kit {
   id: string;
   name: string;
@@ -13,6 +22,8 @@ export interface Kit {
   safetyNotes: string;
   faqs: { question: string; answer: string }[];
   imagePlaceholder: string;
+  image: string;
+  galleryImages: string[];
   bullets: string[];
 }
 
@@ -43,6 +54,8 @@ export const kits: Kit[] = [
       { question: "What if a piece breaks?", answer: "Contact us and we'll send a replacement. Our materials are built to last." }
     ],
     imagePlaceholder: "Cause & Effect Lab",
+    image: kitCauseEffect,
+    galleryImages: [kitCauseEffect, kitCauseEffectKid, kitCauseEffectKid2],
     bullets: [
       "Chain reactions that build step by step",
       "Goal-driven challenges, no hand-holding",
@@ -75,6 +88,8 @@ export const kits: Kit[] = [
       { question: "How long does the kit last?", answer: "Most families spend 2–3 weeks working through all 8 challenges, with plenty of replay value." }
     ],
     imagePlaceholder: "Balance & Path Lab",
+    image: kitBalancePath,
+    galleryImages: [kitBalancePath, kitBalanceKid, kitBalanceKid2],
     bullets: [
       "Balance weights to hit specific targets",
       "Arithmetic and ratios through physical play",
@@ -107,6 +122,8 @@ export const kits: Kit[] = [
       { question: "Are there more challenges coming?", answer: "Yes! Expansion packs are planned for future release." }
     ],
     imagePlaceholder: "Generating Electricity Lab",
+    image: kitElectricity,
+    galleryImages: [kitElectricity, kitElectricityKid],
     bullets: [
       "Generate electricity from wind, water, and sunlight",
       "Observe energy transformation in action",

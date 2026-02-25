@@ -76,15 +76,18 @@ const MiNy = () => {
               </p>
             </div>
 
-            {/* Video placeholder */}
             <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <div className="flex aspect-video items-center justify-center overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-accent to-secondary shadow-warm-lg">
-                <div className="flex flex-col items-center gap-3 text-muted-foreground">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                    <Play className="h-7 w-7 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium">MiNy Demo Video (Coming Soon)</span>
-                </div>
+              <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
+                <video
+                  className="aspect-video w-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster=""
+                >
+                  <source src="/videos/mini-white.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
