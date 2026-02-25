@@ -94,7 +94,11 @@ const HowItWorks = () => {
                     </div>
 
                     <div className={isReversed ? "order-2 md:order-1" : "order-2 md:order-2"}>
-                      <MediaFrame className="w-full" aspectClassName="aspect-[4/3]">
+                      <MediaFrame
+                        className="w-full"
+                        aspectClassName={step.media.type === "video" ? "aspect-auto" : "aspect-[4/3]"}
+                        contentClassName={step.media.type === "video" ? "flex items-center justify-center bg-background" : undefined}
+                      >
                         {step.media.type === "image" ? (
                           <img
                             src={step.media.src}
@@ -104,7 +108,7 @@ const HowItWorks = () => {
                           />
                         ) : (
                           <video
-                            className="h-full w-full bg-background object-contain"
+                            className="mx-auto block h-auto max-h-[520px] w-auto max-w-full object-contain"
                             autoPlay
                             loop
                             muted

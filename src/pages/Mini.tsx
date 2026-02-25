@@ -69,10 +69,14 @@ const MiNy = () => {
               </p>
             </div>
 
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <MediaFrame className="w-full" aspectClassName="aspect-video" contentClassName="bg-background">
+            <div className="relative mx-auto w-full max-w-3xl lg:max-w-[620px]">
+              <MediaFrame
+                className="w-full"
+                aspectClassName="aspect-auto"
+                contentClassName="flex items-center justify-center bg-background"
+              >
                 <video
-                  className="h-full w-full object-contain"
+                  className="mx-auto block h-auto max-h-[560px] w-auto max-w-full object-contain"
                   autoPlay
                   loop
                   muted
@@ -117,10 +121,14 @@ const MiNy = () => {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">MiNy in Action</h2>
             <p className="mt-4 text-muted-foreground">The companion observes, guides, and celebrates as kids work through missions.</p>
           </div>
-          <div className="mt-14 mx-auto max-w-2xl">
-            <MediaFrame className="w-full" aspectClassName="aspect-video" contentClassName="bg-background">
+          <div className="mt-14 mx-auto w-full max-w-3xl">
+            <MediaFrame
+              className="w-full"
+              aspectClassName="aspect-auto"
+              contentClassName="flex items-center justify-center bg-background"
+            >
               <video
-                className="h-full w-full object-contain"
+                className="mx-auto block h-auto max-h-[560px] w-auto max-w-full object-contain"
                 autoPlay
                 loop
                 muted
