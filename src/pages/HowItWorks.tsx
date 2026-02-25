@@ -8,6 +8,8 @@ import kidBalance2 from "@/assets/kid-balance-2.jpg";
 import kidElectricity2 from "@/assets/kid-electricity-2.jpg";
 import MediaFrame from "@/components/media/MediaFrame";
 import ScrollReveal from "@/components/ScrollReveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const steps = [
   {
@@ -43,15 +45,24 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const blobY1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
   return (
     <Layout>
-      <section className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
-        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+      <section ref={heroRef} className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+        <motion.div style={{ y: blobY1 }} className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12] animate-mesh-float" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        </motion.div>
+        <motion.div style={{ y: blobY2 }} className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08] animate-mesh-float-reverse" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        </motion.div>
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight">How It Works</h1>
+              <h1 className="font-display text-4xl tracking-tight">How It Works</h1>
               <p className="mt-3 text-muted-foreground">
                 Designed for minimal setup, maximum learning, with progress kids can feel.
               </p>
@@ -72,13 +83,13 @@ const HowItWorks = () => {
               if (!hasMedia) {
                 return (
                   <ScrollReveal key={step.num}>
-                    <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 shadow-warm">
+                    <div className="glass mx-auto max-w-2xl rounded-3xl border p-8 shadow-warm">
                       <div className="flex items-start gap-5">
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground">
                           {step.num}
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold">{step.title}</h3>
+                          <h3 className="font-display text-xl">{step.title}</h3>
                           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                         </div>
                       </div>
@@ -89,7 +100,7 @@ const HowItWorks = () => {
 
               return (
                 <ScrollReveal key={step.num}>
-                  <div className="rounded-3xl border border-border bg-card/60 p-6 shadow-warm md:p-8">
+                  <div className="glass rounded-3xl border p-6 shadow-warm md:p-8">
                     <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
                       <div className={isReversed ? "order-1 md:order-2" : "order-1 md:order-1"}>
                         <div className="flex items-start gap-4">
@@ -97,7 +108,7 @@ const HowItWorks = () => {
                             {step.num}
                           </div>
                           <div>
-                            <h3 className="text-xl font-bold">{step.title}</h3>
+                            <h3 className="font-display text-xl">{step.title}</h3>
                             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
                           </div>
                         </div>
@@ -145,9 +156,9 @@ const HowItWorks = () => {
       <section className="bg-accent py-16">
         <div className="container">
           <ScrollReveal>
-            <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 text-center shadow-warm">
+            <div className="glass mx-auto max-w-2xl rounded-3xl border p-8 text-center shadow-warm">
               <Badge variant="secondary" className="mb-3">Pilot Access Opening Soon</Badge>
-              <h2 className="text-2xl font-bold">The Sense-i Learning Companion</h2>
+              <h2 className="font-display text-2xl">The Sense-i Learning Companion</h2>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Every kit comes alive with the Sense-i Companion, a friendly guide that walks kids through missions, offers gentle hints when they're stuck, and celebrates progress along the way. Tactile play always comes first; the Companion is designed to enhance, not replace, hands-on learning.
               </p>

@@ -9,6 +9,8 @@ import { trackEvent } from "@/lib/analytics";
 import { z } from "zod";
 import { Mail } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -21,6 +23,10 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const blobY1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,13 +49,17 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
-        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+      <section ref={heroRef} className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+        <motion.div style={{ y: blobY1 }} className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12] animate-mesh-float" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        </motion.div>
+        <motion.div style={{ y: blobY2 }} className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08] animate-mesh-float-reverse" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        </motion.div>
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight">Contact Us</h1>
+              <h1 className="font-display text-4xl tracking-tight">Contact Us</h1>
               <p className="mt-3 text-muted-foreground">
                 Questions, feedback, or ideas? We'd love to hear from you.
               </p>
@@ -64,7 +74,7 @@ const Contact = () => {
         <div className="container">
           <div className="mx-auto max-w-lg">
             <ScrollReveal>
-              <div className="mb-8 flex items-center gap-3 rounded-2xl border border-border bg-accent p-4 shadow-warm">
+              <div className="mb-8 flex items-center gap-3 glass-subtle rounded-2xl border p-4 shadow-warm">
                 <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Mail className="h-4 w-4" />
                 </div>
@@ -77,13 +87,13 @@ const Contact = () => {
 
             <ScrollReveal delay={0.1}>
               {submitted ? (
-                <div className="rounded-3xl border border-border bg-accent p-6 text-center shadow-warm">
+                <div className="glass rounded-3xl border p-6 text-center shadow-warm">
                   <div className="mb-2 text-2xl">✉️</div>
-                  <h3 className="text-lg font-semibold">Message sent!</h3>
+                  <h3 className="font-display text-lg">Message sent!</h3>
                   <p className="mt-1 text-sm text-muted-foreground">We'll get back to you as soon as possible.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-border bg-card p-8 shadow-warm">
+                <form onSubmit={handleSubmit} className="glass space-y-4 rounded-3xl border p-8 shadow-warm">
                   <div>
                     <Label>Name *</Label>
                     <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={100} className="mt-1" />
