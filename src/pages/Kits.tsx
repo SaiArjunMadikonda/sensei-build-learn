@@ -19,50 +19,50 @@ const ProductChip = ({ children }: { children: React.ReactNode }) => (
 const KitsPage = () => {
   return (
     <Layout>
-      <section className="py-14 pb-8" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-4xl font-extrabold tracking-tight">
               Hands-On Learning Kits That Teach How the World Works
             </h1>
-            <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-muted-foreground">
               Each kit includes mission cards, real materials, and a companion-guided experience that turns learning into an adventure.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-16">
         <div className="container">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {kits.map((kit) => (
               <Card key={kit.id} className="group flex flex-col overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1">
-                <div className="flex h-44 items-center justify-center bg-gradient-to-br from-accent to-secondary">
+                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-accent to-secondary">
                   <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
                 </div>
-                <CardContent className="flex flex-1 flex-col p-5">
-                  <div className="mb-2.5 flex flex-wrap gap-1.5">
+                <CardContent className="flex flex-1 flex-col p-6">
+                  <div className="mb-3 flex flex-wrap gap-1.5">
                     <ProductChip><Clock className="h-3 w-3" /> {kit.timePerActivity}</ProductChip>
                     <ProductChip>Age {kit.ageRange}</ProductChip>
                     <ProductChip>{kit.difficulty}</ProductChip>
                   </div>
-                  <h2 className="text-lg font-bold leading-snug">{kit.name}</h2>
-                  <p className="mt-0.5 text-[11px] font-medium text-primary tracking-wide">
+                  <h2 className="text-xl font-bold">{kit.name}</h2>
+                  <p className="mt-1 text-xs font-medium text-primary">
                     Companion-guided missions &bull; 15–30 min experiences
                   </p>
-                  <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{kit.tagline}</p>
-                  <ul className="mt-3 space-y-1.5 flex-1">
+                  <p className="mt-1.5 text-sm text-muted-foreground">{kit.tagline}</p>
+                  <ul className="mt-4 flex-1 space-y-1.5">
                     {kit.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-[13px] leading-snug text-muted-foreground">
-                        <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> {b}
+                      <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /> {b}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-4 flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1 text-[13px]">
+                  <div className="mt-5 flex gap-2">
+                    <Button asChild variant="outline" className="flex-1">
                       <Link to={`/kits/${kit.id}`}>View Details</Link>
                     </Button>
-                    <Button asChild size="sm" className="flex-1 text-[13px]">
+                    <Button asChild className="flex-1">
                       <Link to="/waitlist">Get Early Access</Link>
                     </Button>
                   </div>
@@ -70,7 +70,7 @@ const KitsPage = () => {
               </Card>
             ))}
           </div>
-          <p className="mt-10 text-center text-[13px] text-muted-foreground italic">
+          <p className="mt-12 text-center text-sm text-muted-foreground italic">
             Designed to grow with how children think, not just what they finish.
           </p>
         </div>
