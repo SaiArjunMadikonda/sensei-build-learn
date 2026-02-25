@@ -6,6 +6,7 @@ type MediaFrameProps = {
   className?: string;
   aspectClassName?: string;
   contentClassName?: string;
+  frameClassName?: string;
 };
 
 const MediaFrame = ({
@@ -13,9 +14,10 @@ const MediaFrame = ({
   className,
   aspectClassName = "aspect-[4/3]",
   contentClassName,
+  frameClassName,
 }: MediaFrameProps) => {
   return (
-    <div className={cn("overflow-hidden rounded-3xl border border-border bg-card/70 p-2 shadow-warm", className)}>
+    <div className={cn("overflow-hidden rounded-3xl border border-border p-2 shadow-warm", frameClassName ?? "bg-card/70", className)}>
       <div className={cn("overflow-hidden rounded-2xl", aspectClassName, contentClassName)}>{children}</div>
     </div>
   );
