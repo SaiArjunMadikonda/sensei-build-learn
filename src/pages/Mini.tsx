@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Sparkles } from "lucide-react";
+import MediaFrame from "@/components/media/MediaFrame";
+
 
 const minyFeatures = [
   { title: "Guides the Mission", desc: "Step-by-step prompts that help kids start fast and stay on track." },
@@ -69,7 +70,7 @@ const MiNy = () => {
             </div>
 
             <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <div className="relative aspect-video overflow-hidden rounded-3xl border border-border bg-background shadow-warm-lg">
+              <MediaFrame className="w-full" aspectClassName="aspect-video" contentClassName="bg-background">
                 <video
                   className="h-full w-full object-contain"
                   autoPlay
@@ -80,7 +81,7 @@ const MiNy = () => {
                 >
                   <source src="/videos/mini-white.mp4" type="video/mp4" />
                 </video>
-              </div>
+              </MediaFrame>
             </div>
           </div>
         </div>
@@ -117,7 +118,7 @@ const MiNy = () => {
             <p className="mt-4 text-muted-foreground">The companion observes, guides, and celebrates as kids work through missions.</p>
           </div>
           <div className="mt-14 mx-auto max-w-2xl">
-            <div className="relative aspect-video overflow-hidden rounded-3xl border border-border bg-background shadow-warm">
+            <MediaFrame className="w-full" aspectClassName="aspect-video" contentClassName="bg-background">
               <video
                 className="h-full w-full object-contain"
                 autoPlay
@@ -128,7 +129,7 @@ const MiNy = () => {
               >
                 <source src="/videos/mini-black.mp4" type="video/mp4" />
               </video>
-            </div>
+            </MediaFrame>
           </div>
         </div>
       </section>

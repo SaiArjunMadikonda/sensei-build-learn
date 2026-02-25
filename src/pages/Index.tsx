@@ -9,6 +9,7 @@ import WaitlistModal from "@/components/WaitlistModal";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles, Clock, TrendingUp } from "lucide-react";
 import heroChildCompanion from "@/assets/hero-child-companion.jpg";
+import MediaFrame from "@/components/media/MediaFrame";
 
 const valueProps = [
   { icon: Puzzle, title: "Hands-on by design", desc: "Real materials that turn concepts into experiences." },
@@ -96,9 +97,13 @@ const Index = () => {
 
             {/* Hero image */}
             <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
-                <img src={heroChildCompanion} alt="Child building with a Sense-i kit alongside the MiNy companion lamp" className="h-auto w-full object-cover" />
-              </div>
+              <MediaFrame className="w-full max-w-xl" aspectClassName="aspect-[5/4] sm:aspect-[4/3]">
+                <img
+                  src={heroChildCompanion}
+                  alt="Child building with a Sense-i kit alongside the MiNy companion lamp"
+                  className="h-full w-full object-cover"
+                />
+              </MediaFrame>
             </div>
           </div>
         </div>

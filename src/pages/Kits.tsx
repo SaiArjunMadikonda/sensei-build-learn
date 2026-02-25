@@ -9,6 +9,7 @@ import { trackEvent } from "@/lib/analytics";
 import { useEffect } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowLeft, Clock, BarChart3, Shield, Users, TrendingUp, Package } from "lucide-react";
+import MediaFrame from "@/components/media/MediaFrame";
 
 const ProductChip = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-accent px-3 py-1 text-xs font-medium text-secondary-foreground">
@@ -37,8 +38,10 @@ const KitsPage = () => {
           <div className="grid gap-8 md:grid-cols-3">
             {kits.map((kit) => (
               <Card key={kit.id} className="group flex flex-col overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1">
-                <div className="h-52 overflow-hidden">
-                  <img src={kit.image} alt={kit.name} className="h-full w-full object-cover" loading="lazy" />
+                <div className="p-4 pb-0">
+                  <MediaFrame className="w-full" aspectClassName="aspect-[4/3]">
+                    <img src={kit.image} alt={kit.name} className="h-full w-full object-cover" loading="lazy" />
+                  </MediaFrame>
                 </div>
                 <CardContent className="flex flex-1 flex-col p-6">
                   <div className="mb-3 flex flex-wrap gap-1.5">
@@ -108,9 +111,9 @@ const KitDetailPage = () => {
             <Link to="/kits"><ArrowLeft className="mr-1.5 h-4 w-4" /> All Kits</Link>
           </Button>
           <div className="grid gap-10 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl shadow-warm lg:h-96">
+            <MediaFrame className="w-full" aspectClassName="aspect-[4/3] lg:aspect-[5/4]">
               <img src={kit.image} alt={kit.name} className="h-full w-full object-cover" loading="lazy" />
-            </div>
+            </MediaFrame>
             <div>
               <div className="flex flex-wrap gap-1.5 mb-3">
                 <ProductChip><Clock className="h-3 w-3" /> {kit.timePerActivity}</ProductChip>
