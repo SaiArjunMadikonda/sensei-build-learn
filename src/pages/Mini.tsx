@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Play, Sparkles, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const minyFeatures = [
   { title: "Guides the Mission", desc: "Step-by-step prompts that help kids start fast and stay on track." },
@@ -13,14 +13,6 @@ const minyFeatures = [
   { title: "Celebrates Progress", desc: "Milestones and encouragement that build confidence and persistence." },
 ];
 
-const mediaTiles = [
-  "Demo Clip 01 (Coming Soon)",
-  "Demo Clip 02 (Coming Soon)",
-  "MiNy + Balance Kit (Image Coming Soon)",
-  "MiNy + Cause & Effect Lab (Coming Soon)",
-  "MiNy Unboxing (Coming Soon)",
-  "MiNy in the Classroom (Coming Soon)",
-];
 
 const steps = [
   { num: "01", title: "Choose a kit" },
@@ -79,7 +71,7 @@ const MiNy = () => {
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
                 <video
-                  className="aspect-video w-full object-cover"
+                  className="w-full object-contain"
                   autoPlay
                   loop
                   muted
@@ -122,17 +114,20 @@ const MiNy = () => {
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">MiNy in Action</h2>
-            <p className="mt-4 text-muted-foreground">Photos and clips coming soon from our pilot program.</p>
+            <p className="mt-4 text-muted-foreground">The companion observes, guides, and celebrates as kids work through missions.</p>
           </div>
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {mediaTiles.map((label, i) => (
-              <div key={i} className="flex aspect-video items-center justify-center rounded-3xl border border-border bg-card shadow-warm transition-all duration-300 hover:shadow-warm-md">
-                <div className="flex flex-col items-center gap-2 text-muted-foreground">
-                  <ImageIcon className="h-6 w-6 opacity-40" />
-                  <span className="text-xs font-medium">{label}</span>
-                </div>
-              </div>
-            ))}
+          <div className="mt-14 mx-auto max-w-3xl">
+            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-warm">
+              <video
+                className="w-full object-contain"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/videos/mini-black.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>

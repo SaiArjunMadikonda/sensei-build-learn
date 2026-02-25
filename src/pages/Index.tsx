@@ -9,6 +9,8 @@ import WaitlistModal from "@/components/WaitlistModal";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles, Clock, TrendingUp } from "lucide-react";
 import heroKits from "@/assets/hero-kits.jpg";
+import heroChildCompanion from "@/assets/hero-child-companion.jpg";
+import kidBalanceClosing from "@/assets/kid-balance-closing.jpg";
 
 const valueProps = [
   { icon: Puzzle, title: "Hands-on by design", desc: "Real materials that turn concepts into experiences." },
@@ -97,7 +99,7 @@ const Index = () => {
             {/* Hero image */}
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
-                <img src={heroKits} alt="Sense-i STEM kits with mission cards, building blocks, and concept guide" className="h-auto w-full object-cover" />
+                <img src={heroChildCompanion} alt="Child building with a Sense-i kit alongside the MiNy companion lamp" className="h-auto w-full object-cover" />
               </div>
             </div>
           </div>
@@ -135,8 +137,8 @@ const Index = () => {
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {kits.map((kit) => (
               <Card key={kit.id} className="group overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1">
-                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-accent to-secondary">
-                  <span className="text-sm font-medium text-muted-foreground">{kit.imagePlaceholder}</span>
+                <div className="h-52 overflow-hidden">
+                  <img src={kit.image} alt={kit.name} className="h-full w-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-6">
                   <div className="mb-3 flex flex-wrap gap-1.5">
@@ -270,6 +272,20 @@ const Index = () => {
                 <Link to="/contact">Request a School Pilot</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing Image */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border shadow-warm-lg">
+            <img
+              src={kidBalanceClosing}
+              alt="A child independently completing a Sense-i challenge with confidence"
+              className="h-auto w-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
