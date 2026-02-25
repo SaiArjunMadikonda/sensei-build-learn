@@ -21,8 +21,8 @@ const KitsPage = () => {
     <Layout>
       <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
         <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight">Our First Three Kits</h1>
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight">Hands-On Learning Kits That Teach How the World Works</h1>
             <p className="mt-3 text-muted-foreground">
               Each kit includes mission cards, real materials, and a companion-guided experience that turns learning into an adventure.
             </p>
@@ -45,7 +45,7 @@ const KitsPage = () => {
                     <ProductChip>{kit.difficulty}</ProductChip>
                   </div>
                   <h2 className="text-xl font-bold">{kit.name}</h2>
-                  <p className="mt-1 text-xs font-medium text-primary">Companion-guided missions &bull; 15–30 min builds</p>
+                  <p className="mt-1 text-xs font-medium text-primary">Companion-guided missions &bull; 15–30 min experiences</p>
                   <p className="mt-1.5 text-sm text-muted-foreground">{kit.tagline}</p>
                   <ul className="mt-4 space-y-1.5">
                     {kit.bullets.map((b) => (
@@ -66,6 +66,9 @@ const KitsPage = () => {
               </Card>
             ))}
           </div>
+          <p className="mt-12 text-center text-sm text-muted-foreground italic">
+            Designed to grow with how children think, not just what they finish.
+          </p>
         </div>
       </section>
     </Layout>
