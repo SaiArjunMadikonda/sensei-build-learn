@@ -8,9 +8,7 @@ import Layout from "@/components/layout/Layout";
 import WaitlistModal from "@/components/WaitlistModal";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles, Clock, TrendingUp } from "lucide-react";
-import heroKits from "@/assets/hero-kits.jpg";
 import heroChildCompanion from "@/assets/hero-child-companion.jpg";
-import kidBalanceClosing from "@/assets/kid-balance-closing.jpg";
 
 const valueProps = [
   { icon: Puzzle, title: "Hands-on by design", desc: "Real materials that turn concepts into experiences." },
@@ -243,7 +241,7 @@ const Index = () => {
       </section>
 
       {/* For Parents / For Educators */}
-      <section className="bg-accent py-24">
+      <section className="py-24">
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="rounded-3xl border border-border bg-card p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md">
