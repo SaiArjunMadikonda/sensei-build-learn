@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import kidCauseEffect2 from "@/assets/kid-cause-effect-2.jpg";
 import kidBalance2 from "@/assets/kid-balance-2.jpg";
 import kidElectricity2 from "@/assets/kid-electricity-2.jpg";
+import MediaFrame from "@/components/media/MediaFrame";
 
 const steps = [
   {
@@ -78,41 +79,42 @@ const HowItWorks = () => {
               }
 
               return (
-                <div key={step.num} className={`flex flex-col items-center gap-8 md:gap-12 ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                  {/* Text */}
-                  <div className="flex-1">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground">
-                        {step.num}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold">{step.title}</h3>
-                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                <div key={step.num} className="rounded-3xl border border-border bg-card/60 p-6 shadow-warm md:p-8">
+                  <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
+                    <div className={isReversed ? "order-1 md:order-2" : "order-1 md:order-1"}>
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground">
+                          {step.num}
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold">{step.title}</h3>
+                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Media */}
-                  <div className="w-full md:w-[45%] shrink-0">
-                    <div className="overflow-hidden rounded-3xl border border-border shadow-warm">
-                      {step.media.type === "image" ? (
-                        <img
-                          src={step.media.src}
-                          alt={step.media.alt || ""}
-                          className="aspect-[4/3] w-full object-cover"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <video
-                          className="aspect-[4/3] w-full object-cover"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                        >
-                          <source src={step.media.src} type="video/mp4" />
-                        </video>
-                      )}
+                    <div className={isReversed ? "order-2 md:order-1" : "order-2 md:order-2"}>
+                      <MediaFrame className="w-full" aspectClassName="aspect-[4/3]">
+                        {step.media.type === "image" ? (
+                          <img
+                            src={step.media.src}
+                            alt={step.media.alt || ""}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <video
+                            className="h-full w-full bg-background object-contain"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="metadata"
+                          >
+                            <source src={step.media.src} type="video/mp4" />
+                          </video>
+                        )}
+                      </MediaFrame>
                     </div>
                   </div>
                 </div>
