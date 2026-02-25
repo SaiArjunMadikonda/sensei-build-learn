@@ -7,6 +7,7 @@ import kidCauseEffect2 from "@/assets/kid-cause-effect-2.jpg";
 import kidBalance2 from "@/assets/kid-balance-2.jpg";
 import kidElectricity2 from "@/assets/kid-electricity-2.jpg";
 import MediaFrame from "@/components/media/MediaFrame";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const steps = [
   {
@@ -44,16 +45,22 @@ const steps = [
 const HowItWorks = () => {
   return (
     <Layout>
-      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+      <section className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
         <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight">How It Works</h1>
-            <p className="mt-3 text-muted-foreground">
-              Designed for minimal setup, maximum learning, with progress kids can feel.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <h1 className="text-4xl font-extrabold tracking-tight">How It Works</h1>
+              <p className="mt-3 text-muted-foreground">
+                Designed for minimal setup, maximum learning, with progress kids can feel.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
+
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <section className="py-20">
         <div className="container">
@@ -64,83 +71,91 @@ const HowItWorks = () => {
 
               if (!hasMedia) {
                 return (
-                  <div key={step.num} className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 shadow-warm">
-                    <div className="flex items-start gap-5">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground">
-                        {step.num}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold">{step.title}</h3>
-                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
-
-              return (
-                <div key={step.num} className="rounded-3xl border border-border bg-card/60 p-6 shadow-warm md:p-8">
-                  <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
-                    <div className={isReversed ? "order-1 md:order-2" : "order-1 md:order-1"}>
-                      <div className="flex items-start gap-4">
+                  <ScrollReveal key={step.num}>
+                    <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 shadow-warm">
+                      <div className="flex items-start gap-5">
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground">
                           {step.num}
                         </div>
                         <div>
                           <h3 className="text-xl font-bold">{step.title}</h3>
-                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                         </div>
                       </div>
                     </div>
+                  </ScrollReveal>
+                );
+              }
 
-                    <div className={isReversed ? "order-2 md:order-1" : "order-2 md:order-2"}>
-                      <MediaFrame
-                        className="w-full"
-                        aspectClassName={step.media.type === "video" ? "aspect-auto" : "aspect-[4/3]"}
-                        contentClassName={step.media.type === "video" ? "flex items-center justify-center bg-background" : undefined}
-                      >
-                        {step.media.type === "image" ? (
-                          <img
-                            src={step.media.src}
-                            alt={step.media.alt || ""}
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <video
-                            className="mx-auto block h-auto max-h-[520px] w-auto max-w-full object-contain"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="metadata"
-                          >
-                            <source src={step.media.src} type="video/mp4" />
-                          </video>
-                        )}
-                      </MediaFrame>
+              return (
+                <ScrollReveal key={step.num}>
+                  <div className="rounded-3xl border border-border bg-card/60 p-6 shadow-warm md:p-8">
+                    <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
+                      <div className={isReversed ? "order-1 md:order-2" : "order-1 md:order-1"}>
+                        <div className="flex items-start gap-4">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground">
+                            {step.num}
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold">{step.title}</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className={isReversed ? "order-2 md:order-1" : "order-2 md:order-2"}>
+                        <MediaFrame
+                          className="w-full"
+                          aspectClassName={step.media.type === "video" ? "aspect-auto" : "aspect-[4/3]"}
+                          contentClassName={step.media.type === "video" ? "flex items-center justify-center bg-background" : undefined}
+                        >
+                          {step.media.type === "image" ? (
+                            <img
+                              src={step.media.src}
+                              alt={step.media.alt || ""}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <video
+                              className="mx-auto block h-auto max-h-[520px] w-auto max-w-full object-contain"
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              preload="metadata"
+                            >
+                              <source src={step.media.src} type="video/mp4" />
+                            </video>
+                          )}
+                        </MediaFrame>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
         </div>
       </section>
 
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       {/* Future companion */}
       <section className="bg-accent py-16">
         <div className="container">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 text-center shadow-warm">
-            <Badge variant="secondary" className="mb-3">Pilot Access Opening Soon</Badge>
-            <h2 className="text-2xl font-bold">The Sense-i Learning Companion</h2>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Every kit comes alive with the Sense-i Companion, a friendly guide that walks kids through missions, offers gentle hints when they're stuck, and celebrates progress along the way. Tactile play always comes first; the Companion is designed to enhance, not replace, hands-on learning.
-            </p>
-            <Button asChild className="mt-6">
-              <Link to="/waitlist">Join Waitlist <ArrowRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
-          </div>
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 text-center shadow-warm">
+              <Badge variant="secondary" className="mb-3">Pilot Access Opening Soon</Badge>
+              <h2 className="text-2xl font-bold">The Sense-i Learning Companion</h2>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Every kit comes alive with the Sense-i Companion, a friendly guide that walks kids through missions, offers gentle hints when they're stuck, and celebrates progress along the way. Tactile play always comes first; the Companion is designed to enhance, not replace, hands-on learning.
+              </p>
+              <Button asChild className="mt-6">
+                <Link to="/waitlist">Join Waitlist <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
