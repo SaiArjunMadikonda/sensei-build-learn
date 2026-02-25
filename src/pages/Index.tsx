@@ -276,19 +276,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Closing Image */}
-      <section className="py-16">
-        <div className="container">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border shadow-warm-lg">
-            <img
-              src={kidBalanceClosing}
-              alt="A child independently completing a Sense-i challenge with confidence"
-              className="h-auto w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Newsletter / Waitlist capture */}
       <section className="py-24">
