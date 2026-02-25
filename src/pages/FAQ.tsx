@@ -2,6 +2,8 @@ import Layout from "@/components/layout/Layout";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Helmet } from "react-helmet-async";
 import ScrollReveal from "@/components/ScrollReveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const faqs = [
   { q: "What is Sense-i?", a: "Sense-i makes hands-on STEM kits for kids (starting with ages 6–8) that use real materials and mission-style challenges to build problem-solving, confidence, and concept understanding through play." },
@@ -29,6 +31,11 @@ const faqSchema = {
 };
 
 const FAQ = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const blobY1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
   return (
     <Layout>
       <Helmet>
@@ -37,13 +44,17 @@ const FAQ = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <section className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
-        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+      <section ref={heroRef} className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+        <motion.div style={{ y: blobY1 }} className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12] animate-mesh-float" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        </motion.div>
+        <motion.div style={{ y: blobY2 }} className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08] animate-mesh-float-reverse" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        </motion.div>
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
+              <h1 className="font-display text-4xl tracking-tight">Frequently Asked Questions</h1>
               <p className="mt-3 text-muted-foreground">
                 Everything you need to know about Sense-i kits.
               </p>
@@ -60,7 +71,7 @@ const FAQ = () => {
             <Accordion type="single" collapsible className="space-y-2">
               {faqs.map((faq, i) => (
                 <ScrollReveal key={i} delay={i * 0.04}>
-                  <AccordionItem value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 shadow-warm transition-all duration-200 hover:shadow-warm-md">
+                  <AccordionItem value={`faq-${i}`} className="glass rounded-2xl border px-5 shadow-warm transition-all duration-200 hover:shadow-warm-md">
                     <AccordionTrigger className="text-left text-sm font-semibold">{faq.q}</AccordionTrigger>
                     <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
                   </AccordionItem>

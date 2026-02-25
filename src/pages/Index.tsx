@@ -11,6 +11,8 @@ import { ArrowRight, BookOpen, Lightbulb, Puzzle, Repeat, Users, Sparkles, Clock
 import heroChildCompanion from "@/assets/hero-child-companion.jpg";
 import MediaFrame from "@/components/media/MediaFrame";
 import ScrollReveal from "@/components/ScrollReveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const valueProps = [
   { icon: Puzzle, title: "Hands-on by design", desc: "Real materials that turn concepts into experiences." },
@@ -45,6 +47,11 @@ const ProductChip = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Index = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const blobY1 = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
   return (
     <Layout>
       <Helmet>
@@ -56,9 +63,13 @@ const Index = () => {
       <WaitlistModal />
 
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 55%, hsl(0 0% 100%) 100%)' }}>
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
-        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+      <section ref={heroRef} className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 55%, hsl(0 0% 100%) 100%)' }}>
+        <motion.div style={{ y: blobY1 }} className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12] animate-mesh-float" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        </motion.div>
+        <motion.div style={{ y: blobY2 }} className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08] animate-mesh-float-reverse" aria-hidden="true">
+          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        </motion.div>
 
         <div className="container py-20 md:py-28">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -67,7 +78,7 @@ const Index = () => {
                 <Badge variant="secondary" className="mb-6 gap-1.5 border border-border px-4 py-1.5 text-sm font-medium">
                   <Sparkles className="h-3.5 w-3.5" /> Learning Companion · Pilot access opening soon
                 </Badge>
-                <h1 className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                <h1 className="text-balance font-display text-4xl font-normal tracking-tight sm:text-5xl lg:text-6xl">
                   Kits that come alive with a{" "}
                   <span className="text-primary">learning companion.</span>
                 </h1>
@@ -137,7 +148,7 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our First Three Kits</h2>
+              <h2 className="font-display text-3xl tracking-tight sm:text-4xl">Our First Three Kits</h2>
               <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
                 Each kit includes mission cards, real materials, and a companion-guided experience that turns learning into an adventure.
               </p>
@@ -146,7 +157,7 @@ const Index = () => {
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {kits.map((kit, i) => (
               <ScrollReveal key={kit.id} delay={i * 0.12}>
-                <Card className="group h-full overflow-hidden rounded-3xl border-border shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1 hover:border-primary/30">
+                <Card className="glass group h-full overflow-hidden rounded-3xl shadow-warm transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-1 hover:border-primary/30">
                   <div className="h-52 overflow-hidden">
                     <img src={kit.image} alt={kit.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   </div>
@@ -185,7 +196,7 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Meet the Learning Companion</h2>
+              <h2 className="font-display text-3xl tracking-tight sm:text-4xl">Meet the Learning Companion</h2>
               <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
                 A friendly guide that keeps kids moving from &lsquo;stuck&rsquo; to &lsquo;I got it.&rsquo;
               </p>
@@ -198,8 +209,8 @@ const Index = () => {
               { title: "Celebrates Progress", desc: "Milestones, encouragement, and \u2018level up\u2019 moments that build confidence." },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1 hover:border-primary/30">
-                  <h3 className="text-lg font-bold text-primary-deep">{item.title}</h3>
+                <div className="glass rounded-3xl border p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1 hover:border-primary/30">
+                  <h3 className="font-display text-lg text-primary-deep">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -218,7 +229,7 @@ const Index = () => {
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <ScrollReveal>
-              <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">The Hands-on Gap</h2>
+              <h2 className="text-center font-display text-3xl tracking-tight sm:text-4xl">The Hands-on Gap</h2>
               <p className="mt-4 mx-auto max-w-2xl text-center text-muted-foreground">
                 Kids have more access to information than ever, but fewer chances to build, test, and learn through real materials. Sense-i brings hands-on learning back in a way that fits modern routines.
               </p>
@@ -230,8 +241,8 @@ const Index = () => {
                 { title: "Parents & schools need low-prep STEM", text: "Great activities exist, but they must be easy to start and repeat." },
               ].map((item, i) => (
                 <ScrollReveal key={item.title} delay={i * 0.1}>
-                  <div className="rounded-3xl border border-border bg-card p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1 hover:border-primary/30">
-                    <div className="text-lg font-bold text-primary-deep">{item.title}</div>
+                  <div className="glass rounded-3xl border p-7 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1 hover:border-primary/30">
+                    <div className="font-display text-lg text-primary-deep">{item.title}</div>
                     <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
                   </div>
                 </ScrollReveal>
@@ -250,7 +261,7 @@ const Index = () => {
       <section className="bg-accent py-24">
         <div className="container">
           <ScrollReveal>
-            <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Why Sense-i?</h2>
+            <h2 className="text-center font-display text-3xl tracking-tight sm:text-4xl">Why Sense-i?</h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
               We design every kit around how kids actually learn: hands-on practice, clear goals, and progress you can see.
             </p>
@@ -258,7 +269,7 @@ const Index = () => {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {valueProps.map((vp, i) => (
               <ScrollReveal key={vp.title} delay={i * 0.08}>
-                <div className="rounded-3xl border border-border bg-card p-6 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1 hover:border-primary/30">
+                <div className="glass rounded-3xl border p-6 text-center shadow-warm transition-all duration-300 hover:shadow-warm-md hover:-translate-y-1 hover:border-primary/30">
                   <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-2xl bg-accent text-primary">
                     <vp.icon className="h-5 w-5" />
                   </div>
@@ -278,8 +289,8 @@ const Index = () => {
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2">
             <ScrollReveal direction="left">
-              <div className="rounded-3xl border border-border bg-card p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md hover:border-primary/30">
-                <h3 className="text-2xl font-bold">For Parents</h3>
+              <div className="glass rounded-3xl border p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md hover:border-primary/30">
+                <h3 className="font-display text-2xl">For Parents</h3>
                 <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                   <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Screen-smart STEM play (core learning works without an app)</li>
                   <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Open-and-go: start in minutes, no prep required</li>
@@ -293,8 +304,8 @@ const Index = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <div className="rounded-3xl border border-border bg-card p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md hover:border-primary/30">
-                <h3 className="text-2xl font-bold">For Educators</h3>
+              <div className="glass rounded-3xl border p-8 shadow-warm transition-all duration-300 hover:shadow-warm-md hover:border-primary/30">
+                <h3 className="font-display text-2xl">For Educators</h3>
                 <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                   <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Low-prep, high-engagement STEM activities</li>
                   <li className="flex gap-2.5"><span className="text-primary font-bold">✓</span> Supports problem-solving, reasoning, and teamwork</li>
@@ -315,8 +326,8 @@ const Index = () => {
       <section className="py-24">
         <div className="container">
           <ScrollReveal>
-            <div className="mx-auto max-w-lg rounded-3xl border border-border bg-card p-10 text-center shadow-warm">
-              <h2 className="text-2xl font-bold">Stay in the loop</h2>
+            <div className="glass mx-auto max-w-lg rounded-3xl border p-10 text-center shadow-warm">
+              <h2 className="font-display text-2xl">Stay in the loop</h2>
               <p className="mt-3 text-sm text-muted-foreground">
                 Get pilot updates, early access, and STEM tips. No spam, ever.
               </p>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -122,4 +122,50 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl border-border/50;
+  }
+
+  .glass-subtle {
+    @apply bg-card/80 backdrop-blur-md border-border/40;
+  }
+}
+
+@keyframes mesh-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  50% {
+    transform: translate(-10px, 15px) scale(0.97);
+  }
+  75% {
+    transform: translate(-25px, -10px) scale(1.03);
+  }
+}
+
+@keyframes mesh-float-reverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-20px, 15px) scale(1.03);
+  }
+  50% {
+    transform: translate(15px, -20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 10px) scale(1.05);
+  }
+}
+
+.animate-mesh-float {
+  animation: mesh-float 20s ease-in-out infinite;
+}
+
+.animate-mesh-float-reverse {
+  animation: mesh-float-reverse 25s ease-in-out infinite;
 }

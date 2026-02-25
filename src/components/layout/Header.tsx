@@ -22,7 +22,7 @@ const Header = () => {
     to === "/" ? location.pathname === "/" : location.pathname.startsWith(to);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Sense-i — Build it. Try it. Learn it!" className="h-10 w-auto" />
