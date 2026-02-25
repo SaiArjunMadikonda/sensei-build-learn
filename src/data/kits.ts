@@ -20,8 +20,8 @@ export const kits: Kit[] = [
   {
     id: "cause-effect-lab",
     name: "Cause & Effect Lab",
-    tagline: "Explore how one action leads to another through simple, goal-driven physical systems.",
-    description: "Explore how one action leads to another through simple, goal-driven physical systems.",
+    tagline: "Build chain reactions and discover why things happen.",
+    description: "Build chain reactions and discover why things happen.",
     overview: "The Cause & Effect Lab is all about understanding connections. Kids build chain reactions, test variables, and discover that every action has a consequence. It's engineering meets detective work, and it's incredibly fun.",
     whatsInside: [
       "10 challenge cards (progressive difficulty)",
@@ -52,8 +52,8 @@ export const kits: Kit[] = [
   {
     id: "balance-path-lab",
     name: "Balance & Path Lab",
-    tagline: "Experience math as a problem of balance, quantities, and pathways, not symbols on paper.",
-    description: "Experience math as a problem of balance, quantities, and pathways, not symbols on paper.",
+    tagline: "Learn math through balance, weights, and pathways.",
+    description: "Learn math through balance, weights, and pathways.",
     overview: "The Balance & Path Lab introduces kids to foundational math and physics concepts through progressive challenge cards. Each challenge builds on the last, guiding children from simple balance experiments to complex pathway interactions, all with real, tactile materials.",
     whatsInside: [
       "8 challenge cards (progressive difficulty)",
@@ -84,8 +84,8 @@ export const kits: Kit[] = [
   {
     id: "generating-electricity-lab",
     name: "Generating Electricity Lab",
-    tagline: "See how motion becomes power using simple, real-world energy systems.",
-    description: "See how motion becomes power using simple, real-world energy systems.",
+    tagline: "Turn motion into power with real energy systems.",
+    description: "Turn motion into power with real energy systems.",
     overview: "The Generating Electricity Lab develops real-world understanding of energy transformation. Through physical experiments, kids learn how wind, motion, water, and sunlight can generate electricity, the foundations of energy science and systems thinking.",
     whatsInside: [
       "12 challenge cards (progressive difficulty)",
