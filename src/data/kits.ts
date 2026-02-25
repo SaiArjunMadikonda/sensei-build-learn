@@ -44,9 +44,9 @@ export const kits: Kit[] = [
     ],
     imagePlaceholder: "Cause & Effect Lab",
     bullets: [
-      "Chain reactions where every step must intentionally trigger the next",
-      "Clear physical goals that guide thinking without giving answers",
-      "Concepts like sequencing, timing, and causality revealed through play"
+      "Chain reactions that build step by step",
+      "Goal-driven challenges, no hand-holding",
+      "Sequencing, timing, and causality through play"
     ]
   },
   {
@@ -76,9 +76,9 @@ export const kits: Kit[] = [
     ],
     imagePlaceholder: "Balance & Path Lab",
     bullets: [
-      "Numbers and weights arranged to reach specific targets or stay balanced",
-      "Arithmetic and ratios understood through physical interaction",
-      "Logical planning shaped by constraints, tradeoffs, and outcomes"
+      "Balance weights to hit specific targets",
+      "Arithmetic and ratios through physical play",
+      "Logical planning with real constraints"
     ]
   },
   {
@@ -108,9 +108,9 @@ export const kits: Kit[] = [
     ],
     imagePlaceholder: "Generating Electricity Lab",
     bullets: [
-      "Electricity produced using wind, motion, water, and sunlight",
-      "Energy transformation observed through measurable outcomes",
-      "Systems thinking introduced through safe, hands-on experimentation"
+      "Generate electricity from wind, water, and sunlight",
+      "Observe energy transformation in action",
+      "Safe, hands-on systems thinking"
     ]
   }
 ];
