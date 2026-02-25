@@ -69,13 +69,14 @@ const MiNy = () => {
             </div>
 
             <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <div className="overflow-hidden rounded-3xl border border-border shadow-warm-lg">
+              <div className="relative aspect-video overflow-hidden rounded-3xl border border-border bg-background shadow-warm-lg">
                 <video
-                  className="aspect-video w-full object-cover"
+                  className="h-full w-full object-contain"
                   autoPlay
                   loop
                   muted
                   playsInline
+                  preload="metadata"
                 >
                   <source src="/videos/mini-white.mp4" type="video/mp4" />
                 </video>
@@ -116,13 +117,14 @@ const MiNy = () => {
             <p className="mt-4 text-muted-foreground">The companion observes, guides, and celebrates as kids work through missions.</p>
           </div>
           <div className="mt-14 mx-auto max-w-2xl">
-            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-warm">
+            <div className="relative aspect-video overflow-hidden rounded-3xl border border-border bg-background shadow-warm">
               <video
-                className="aspect-video w-full object-cover"
+                className="h-full w-full object-contain"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="metadata"
               >
                 <source src="/videos/mini-black.mp4" type="video/mp4" />
               </video>
