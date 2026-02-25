@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Helmet } from "react-helmet-async";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const faqs = [
   { q: "What is Sense-i?", a: "Sense-i makes hands-on STEM kits for kids (starting with ages 6–8) that use real materials and mission-style challenges to build problem-solving, confidence, and concept understanding through play." },
@@ -36,26 +37,34 @@ const FAQ = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+      <section className="relative overflow-hidden py-16" style={{ background: 'linear-gradient(180deg, hsl(250 100% 98%) 0%, hsl(320 100% 99.6%) 100%)' }}>
+        <div className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-[400px] w-[400px] rounded-full opacity-[0.08]" style={{ background: 'radial-gradient(circle, hsl(258 90% 76%) 0%, transparent 70%)', filter: 'blur(80px)' }} />
         <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
-            <p className="mt-3 text-muted-foreground">
-              Everything you need to know about Sense-i kits.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <h1 className="text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
+              <p className="mt-3 text-muted-foreground">
+                Everything you need to know about Sense-i kits.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
+
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <section className="py-20">
         <div className="container">
           <div className="mx-auto max-w-2xl">
             <Accordion type="single" collapsible className="space-y-2">
               {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 shadow-warm transition-all duration-200 hover:shadow-warm-md">
-                  <AccordionTrigger className="text-left text-sm font-semibold">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
-                </AccordionItem>
+                <ScrollReveal key={i} delay={i * 0.04}>
+                  <AccordionItem value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 shadow-warm transition-all duration-200 hover:shadow-warm-md">
+                    <AccordionTrigger className="text-left text-sm font-semibold">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
+                  </AccordionItem>
+                </ScrollReveal>
               ))}
             </Accordion>
           </div>
